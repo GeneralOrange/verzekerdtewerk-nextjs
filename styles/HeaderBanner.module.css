@@ -1,0 +1,22 @@
+.HeaderBanner {
+    position: relative;
+}
+
+.HeaderBanner__inner {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 500px;
+}
+
+.HeaderBanner__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+}
