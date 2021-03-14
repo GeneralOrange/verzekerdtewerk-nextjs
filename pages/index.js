@@ -7,7 +7,7 @@ export default function Home({ homepage }) {
     <Head>
       <title>{homepage.name}</title>
     </Head>
-    <HeaderBanner params={homepage.header} />
+    <HeaderBanner data={homepage.header} />
     
   </>)
 }
