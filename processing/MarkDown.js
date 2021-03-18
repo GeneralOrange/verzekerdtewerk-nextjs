@@ -4,6 +4,10 @@ import html from '../node_modules/remark-html'
 
 const MarkDown = ({ data }) => 
 {
+    if(!data){
+        return;
+    }
+    
     var output
 
     unified()

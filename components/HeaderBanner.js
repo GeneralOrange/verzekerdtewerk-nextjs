@@ -3,6 +3,10 @@ import MarkDown from '../processing/MarkDown'
 
 const HeaderBanner = ({ data }) =>
 {
+    if(!data){
+        return;
+    }
+    
     const ImagePath = process.env.API_ENDPOINT+data.image.url;
     return (
         <>
