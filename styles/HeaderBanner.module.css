@@ -1,5 +1,7 @@
 .HeaderBanner {
     position: relative;
+    background-color: #005f80;
+    color: #353231;
 }
 
 .HeaderBanner__inner {

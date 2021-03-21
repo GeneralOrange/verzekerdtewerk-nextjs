@@ -55,7 +55,10 @@ const RichSnippet = ({ data }) => {
 
 const Headings = ({ data }) => {
     if(!data){
-        return;
+        return (
+            <>
+            </>
+        );
     }
     
     return (
