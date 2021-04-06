@@ -1,40 +1,41 @@
 import Head from 'next/head'
 
+const SortMeta = ( value, index ) => {
+   
+    switch(value.sort){
+        case 'title':
+
+            return (
+                <title key={index}>{value.name}</title>
+            )    
+            break
+
+        case 'canonical':
+            return (
+                <link key={index} rel={value.name} href={value.description} />
+            )
+            break
+
+        default:
+            return (
+                <meta key={index} name={value.name} description={value.description} />
+            )
+            break
+    }
+}
+
 const MetaFields = ({ data }) => {
     if(!data.meta_fields){
         return;
     }
 
-    var output = [];
-
-    {data.meta_fields.map((value, index) => {
-        switch(value.sort){
-            case 'title':
-                output.push( (
-                    <>
-                        <title key={index}>{value.name}</title>
-                    </>
-                ))
-                break
-
-            case 'canonical':
-                output.push((
-                    <>
-                        <link key={index} rel={value.name} href={value.description} />
-                    </>
-                ))
-                break
-
-            default:
-                output.push((
-                    <>
-                        <meta key={index} name={value.name} description={value.description} />
-                    </>
-                ))
-                break
-        }
-    })}
-    return output
+    return (
+        <>
+            {data.meta_fields.map((value, index) => (
+                SortMeta(value, index)
+            ))}
+        </>
+    )
 }
 
 const RichSnippet = ({ data }) => {

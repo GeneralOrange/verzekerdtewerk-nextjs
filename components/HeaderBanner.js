@@ -23,6 +23,8 @@ const HeaderBanner = ({ data }) =>
                             </div>
                         </div>
                     </div>
+
+                    <div className={styles.HeaderBanner__image}></div>
                 </div>
             </>
         )  

@@ -1,33 +1,34 @@
 import Link from 'next/link'
-import styles from '../styles/Menu.module.css'
+import styles from '../styles/menu/Menu.module.css'
 
-const MenuSections = ({ data }) => {
-  if(!data){
-    return (
-      <>
-      </>
-    )
+const handleToggleSection = (e) => {
+  if(!e.target || !e.target.classList.contains('js-MenuItemToggle')){
+    return;
   }
 
-  var output = [];
+  e.target.parentElement.querySelector('.js-MenuSectionToggle').classList.toggle('active');
+}
 
-  { data.menu_section.map((data, index) => {
-    output.push(
-      (
+const MenuSections = ({ data }) => {
+    if(!data){
+        return (
         <>
-          <div key={index} className={styles.MenuItem}>
-            <div className={styles.MenuItem__name}>
-              {data.name}
-            </div>
-            { SingleMenuSection( { data } ) }
-          </div>
         </>
-      )
-    )
-    
-  })}
+        )
+    }
 
-  return output;
+    return (
+    <>
+        { data.menu_section.map((data, index) => (
+            <div key={index} className={`${styles.MenuItem} js-MenuItemToggle`} onClick={handleToggleSection}>
+                <div className={`${styles.MenuItem__name} js-MenuItemToggle`}>
+                  {data.name}
+                </div>
+                { SingleMenuSection( { data } ) }
+            </div>
+        ))}
+    </>
+    )
 }
 
 const SingleMenuSection = ({ data }) => {
@@ -40,8 +41,7 @@ const SingleMenuSection = ({ data }) => {
 
   return (
     <>
-      <div className={styles.MenuSection}>
-        <h2>{data.name}</h2>
+      <div className={`${styles.MenuSection} js-MenuSectionToggle`}>
         <div>
           {data.content}
         </div>

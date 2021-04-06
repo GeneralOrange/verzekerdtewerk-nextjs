@@ -1,0 +1,45 @@
+.Menu {
+    display: flex;
+}
+
+.Menu__outer {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    min-height: 100px;
+    background-color: #005f80;
+    display: flex;
+    align-items: flex-end;
+}
+
+.MenuItem {
+    position: relative;
+    padding: 5px 20px;
+    background-color: #005f80;
+    cursor: pointer;
+}
+
+.MenuItem:hover {
+    background-color: #2882a0;
+}
+
+.MenuItem__name {
+    color: white;
+    font-weight: bold;
+}
+
+.MenuSection {
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    padding: 5px 20px;
+    background-color: #2882a0;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition-property: opacity, transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
