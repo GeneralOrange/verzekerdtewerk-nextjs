@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/menu/Menu.module.css'
 
 const handleToggleSection = (e) => {
@@ -42,12 +43,25 @@ const SingleMenuSection = ({ data }) => {
   return (
     <>
       <div className={`${styles.MenuSection} js-MenuSectionToggle`}>
-        <div>
+        <div className={styles.MenuSection__innerText}>
           {data.content}
         </div>
-        {data.pages.map((key, value) => {
-          <Link key={key} href={`./${value.slug}`}>{value.name}</Link>
-        })}
+
+        <ul className={styles.MenuSection__list}>
+          {data.pages.map((value, key) => (
+            
+            <Link
+              key={key}
+              href={`./${value.slug}`}
+            >
+              <li>
+                {value.name}
+              </li>
+            </Link>
+            
+          ))}
+        </ul>
+
       </div>
     </>
   )
@@ -66,6 +80,25 @@ const Menu = ({ data }) => {
       <>
         <div className={styles.Menu__outer}>
           <div className="container">
+            <div className="row">
+              <div className="col-12 col-lg-6">
+                <Link href="/">
+                  <div className={styles.Logo}>
+                    <Image
+                      src="/logo.svg"
+                      alt="Logo"
+                      width="90"
+                      height="90"
+                    />
+                  </div>
+                </Link>
+              </div>
+              <div className="col-12 col-lg-6">
+                  <Link href="#">
+                    <div className={styles.CTA}>Nieuwe klus</div>
+                  </Link>
+              </div>
+            </div>
             <div className="row">
               <div className="col-12">
                 <div className={styles.Menu}>
