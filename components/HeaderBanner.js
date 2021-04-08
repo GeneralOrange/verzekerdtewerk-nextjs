@@ -1,4 +1,4 @@
-import styles from '../styles/HeaderBanner.module.css'
+import styles from '../styles/header/HeaderBanner.module.css'
 import MarkDown from '../processing/MarkDown'
 
 const HeaderBanner = ({ data }) =>

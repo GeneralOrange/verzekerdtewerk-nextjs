@@ -1,6 +1,7 @@
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
+import Footer from '../components/Footer'
 
 export default function Home({ data }) {
 
@@ -9,6 +10,7 @@ export default function Home({ data }) {
       <Headings data={data.homepage.meta_data} />
       <Menu data={ data.menu }/>
       <HeaderBanner data={data.homepage.header} />
+      <Footer data={data.footer}/>
     </>
   )
 }
@@ -18,13 +20,16 @@ export async function getStaticProps() {
   //get homepage from our api
   const resHome = await fetch(`${process.env.API_ENDPOINT}/homepage`);
   const resMenu = await fetch(`${process.env.API_ENDPOINT}/menu`);
+  const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
   
   const homepage = await resHome.json();
   const menu = await resMenu.json();
+  const footer = await resFooter.json();
 
   const data = {
     homepage,
-    menu
+    menu,
+    footer,
   }
 
   return {

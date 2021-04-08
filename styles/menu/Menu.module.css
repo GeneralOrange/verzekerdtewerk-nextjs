@@ -14,7 +14,6 @@
 
 .MenuItem {
     position: relative;
-    /* background-color: #005f80; */
     cursor: pointer;
 }
 
@@ -23,7 +22,7 @@
 }
 
 .MenuItem__name {
-    color: black;
+    color: #353231;
     font-weight: bold;
     padding: 5px 20px;
 }

@@ -67,6 +67,7 @@ const Headings = ({ data }) => {
             <Head>
                 { MetaFields({ data }) } 
                 { RichSnippet({ data }) }
+                <link rel="shortcut icon" href="/logo.svg"/>
             </Head>
         </>
     )
