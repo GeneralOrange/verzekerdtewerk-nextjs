@@ -1,6 +1,7 @@
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
+import Layout from '../components/Layout'
 import Footer from '../components/Footer'
 
 export default function Page({ data })
@@ -10,6 +11,7 @@ export default function Page({ data })
           <Headings data={data.page.meta_data} />
           <Menu data={ data.menu }/>
           <HeaderBanner data={data.page.header} />
+          <Layout data={data.page.flexcontent} sidebar={data.sidebar} />
           <Footer data={data.footer}/>
         </>
       )
@@ -43,9 +45,19 @@ export async function getStaticProps({ params }) {
     const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
     const footer = await resFooter.json();
 
+    const resSidebar = await fetch(`${process.env.API_ENDPOINT}/sidebar`);
+    const rawSidebarData = await resSidebar.json();
+    const sidebarBolean = page.sidebar;
+
+    const sidebar = {
+        rawSidebarData,
+        sidebarBolean,
+    }
+
     const data = {
         page,
         menu,
+        sidebar,
         footer
     }
 
