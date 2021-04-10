@@ -20,10 +20,9 @@ const MarkDown = ({ data }) =>
 
     return (
         <>  
-            <div dangerouslySetInnerHTML={{
+            <span className="seriousContent" dangerouslySetInnerHTML={{
                 __html: output
-            }}>
-            </div>
+            }}/>
         </>
     )
     
