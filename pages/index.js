@@ -1,7 +1,7 @@
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
-import Layout from '../components/Layout'
+import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/Footer'
 
 export default function Home({ data }) {
@@ -10,8 +10,8 @@ export default function Home({ data }) {
     <>
       <Headings data={data.homepage.meta_data} />
       <Menu data={ data.menu }/>
-      <HeaderBanner data={data.homepage.header} />
-      <Layout data={data.homepage.flexcontent} sidebar={false} />
+      <HeaderBanner data={data.homepage.header} homepage={true} />
+      <FlexLayout data={data.homepage.flexcontent} sidebar={false} />
       <Footer data={data.footer}/>
     </>
   )

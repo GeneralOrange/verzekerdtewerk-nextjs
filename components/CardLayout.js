@@ -1,8 +1,8 @@
-import FlexContentController from '../components/flexcontent/FlexContentController'
-import Sidebar from '../components/Sidebar'
+import Cards from './flexcontent/Cards'
+import Sidebar from './Sidebar'
 
-const Layout = ({ data, sidebar }) => {
-    if(!data || !sidebar){
+const CardLayout = ({ data, sidebar }) => {
+    if(!data && !sidebar){
         return (
             <>
             </>
@@ -15,7 +15,7 @@ const Layout = ({ data, sidebar }) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <FlexContentController data={data}/>
+                            <Cards data={data}/>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ const Layout = ({ data, sidebar }) => {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-lg-8">
-                        <FlexContentController data={data}/>
+                        <Cards data={data}/>
                     </div>
                     <div className="col-12 col-lg-4">
                         <Sidebar data={sidebar.rawSidebarData}/>
@@ -39,4 +39,4 @@ const Layout = ({ data, sidebar }) => {
     )
 }
 
-export default Layout;
+export default CardLayout;

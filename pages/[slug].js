@@ -1,7 +1,7 @@
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
-import Layout from '../components/Layout'
+import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/Footer'
 
 export default function Page({ data })
@@ -11,7 +11,7 @@ export default function Page({ data })
           <Headings data={data.page.meta_data} />
           <Menu data={ data.menu }/>
           <HeaderBanner data={data.page.header} />
-          <Layout data={data.page.flexcontent} sidebar={data.sidebar} />
+          <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
           <Footer data={data.footer}/>
         </>
       )

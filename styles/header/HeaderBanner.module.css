@@ -9,7 +9,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 500px;
+    min-height: 200px;
+}
+
+.HeaderBanner__innerHomepage,
+.HeaderBanner__imageHomepage {
+    min-height: 400px;
 }
 
 .HeaderBanner__image {
@@ -21,5 +26,6 @@
     z-index: -1;
     object-fit: cover;
     background-color: #005f80;
-    min-height: 500px;
+    min-height: 200px;
+    filter: brightness(.5);
 }

@@ -3,7 +3,7 @@
     top: 50px;
     margin: 50px 0;
     padding: 20px;
-    background-color: rgb(213, 234, 253);
+    background-color: #d5eafd;
 }
 
 .Sidebar__title {
@@ -40,6 +40,14 @@
 
 .Sidebar__categoryItem:last-of-type {
     margin-bottom: 0;
+}
+
+.Sidebar__categoryItem a {
+    display: block;
+}
+
+.Sidebar__categoryItem a:hover {
+    color: white;
 }
 
 .Sidebar__cta {

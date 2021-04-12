@@ -36,13 +36,15 @@ const CategoryList = ({ categories }) => {
     return (
         <ul className={styles.Sidebar__categoryList}>
             {categories.map((category, index) => (
-                
-                <Link key={index} href={`/${category.slug}`}>
-                    <li className={styles.Sidebar__categoryItem}>
-                        {category.name}
-                    </li>
-                </Link>
-                
+                <li key={index} className={styles.Sidebar__categoryItem}>
+                    <Link href={`/categorie/${category.slug}`}>
+                        <a>
+                                
+                                {category.name}
+                            
+                        </a>
+                    </Link>
+                </li>
             ))}
         </ul>
     )
