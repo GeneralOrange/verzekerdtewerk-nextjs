@@ -5,7 +5,13 @@ import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/Footer'
 
 export default function Home({ data }) {
-
+  if(!data){
+    return (
+      <>
+      </>
+    )
+  }
+  
   return (
     <>
       <Headings data={data.homepage.meta_data} />

@@ -9,7 +9,7 @@ const CardLayout = ({ data, sidebar }) => {
         )
     }
 
-    if(!sidebar.sidebarBolean){
+    if(!sidebar || !sidebar.sidebarBolean){
         return (
             <>
                 <div className="container">
