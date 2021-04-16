@@ -9,12 +9,14 @@ const FooterSections = ({ data }) => {
         </>
         )
     }
+
+    const footerSection = Array.from(data.footersection);
     
-    const gridSize = Math.ceil(12 / parseInt(data.footersection.length));       
+    const gridSize = Math.ceil(12 / parseInt(footerSection.length));       
 
     return (
     <>
-        { data.footersection.map((data, index) => (
+        { footerSection.map((data, index) => (
             <div key={index} className={`${styles.FooterItem} col-12 col-md-6 col-lg-${gridSize}`}>
                 <div className={styles.FooterItem__name}>
                   {data.name}
