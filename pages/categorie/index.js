@@ -4,7 +4,7 @@ import Menu from '../../components/Menu'
 import CardLayout from '../../components/CardLayout'
 import Footer from '../../components/Footer'
 
-const CategoryCollection = ({ data }) => {
+export default function CategoryCollection({ data }) {
     if(!data){
         return (
             <>
@@ -74,5 +74,3 @@ export async function getStaticProps() {
         }
     }
 }
-
-export default CategoryCollection;

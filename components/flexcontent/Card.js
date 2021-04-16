@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/flexcontent/Card.module.css'
 
-const Card = ({ data }) => {
+export default function Card({ data }){
     if(!data){
         return (
             <>
@@ -33,5 +33,3 @@ const Card = ({ data }) => {
         </>
     )
 }
-
-export default Card;

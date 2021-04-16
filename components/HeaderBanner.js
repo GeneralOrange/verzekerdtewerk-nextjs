@@ -1,8 +1,7 @@
 import styles from '../styles/header/HeaderBanner.module.css'
 import MarkDown from '../processing/MarkDown'
 
-const HeaderBanner = ({ data, homepage }) =>
-{
+export default function HeaderBanner({ data, homepage }){
     if(!data){
         return (
             <>
@@ -49,6 +48,3 @@ const HeaderBanner = ({ data, homepage }) =>
         </>
     )    
 }
-
-
-export default HeaderBanner;

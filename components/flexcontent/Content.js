@@ -1,7 +1,7 @@
 import MarkDown from '../../processing/MarkDown'
 import styles from '../../styles/flexcontent/Content.module.css'
 
-const Content = ({ data }) => {
+export default function Content({ data }){
     if(!data){
         return (
             <>
@@ -15,5 +15,3 @@ const Content = ({ data }) => {
         </div>
     )
 }
-
-export default Content;

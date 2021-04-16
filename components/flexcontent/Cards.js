@@ -1,7 +1,7 @@
 import Card from './Card'
 import styles from '../../styles/flexcontent/Cards.module.css'
 
-const Cards = ({ data }) => {
+export default function Cards({ data }){
     if(!data){
         return (
             <>
@@ -23,5 +23,3 @@ const Cards = ({ data }) => {
         </>
     )
 }
-
-export default Cards;

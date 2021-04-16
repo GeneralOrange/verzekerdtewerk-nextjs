@@ -3,7 +3,7 @@ import Image from 'next/image'
 import MarkDown from '../processing/MarkDown'
 import styles from '../styles/Sidebar.module.css'
 
-const Sidebar = ({ data }) => {
+export default function Sidebar({ data }){
     if(!data){
         return (
             <>
@@ -25,7 +25,7 @@ const Sidebar = ({ data }) => {
     )
 }
 
-const CategoryList = ({ categories }) => {
+function CategoryList({ categories }){
     if(!categories){
         return (
             <>
@@ -50,7 +50,7 @@ const CategoryList = ({ categories }) => {
     )
 }
 
-const CTA = ({ ctaData }) => {
+function CTA({ ctaData }){
     if(!ctaData){
         return (
             <>
@@ -71,5 +71,3 @@ const CTA = ({ ctaData }) => {
         </div>
     )
 }
-
-export default Sidebar;

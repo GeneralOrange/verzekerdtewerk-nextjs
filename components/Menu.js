@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/menu/Menu.module.css'
 
-const handleToggleSection = (e) => {
+function handleToggleSection(e){
   if(!e.target || !e.target.classList.contains('js-MenuItemToggle')){
     return;
   }
@@ -10,7 +10,7 @@ const handleToggleSection = (e) => {
   e.target.parentElement.querySelector('.js-MenuSectionToggle').classList.toggle('active');
 }
 
-const MenuSections = ({ data }) => {
+function MenuSections({ data }){
     if(!data){
         return (
         <>
@@ -20,19 +20,19 @@ const MenuSections = ({ data }) => {
 
     return (
       <>
-          {/* { data.menu_section.map((data, index) => {
+          { data.menu_section.map((data, index) => {
               <div key={index} className={`${styles.MenuItem} js-MenuItemToggle`} onClick={handleToggleSection}>
                   <div className={`${styles.MenuItem__name} js-MenuItemToggle`}>
                     {data.name}
                   </div>
                   { SingleMenuSection( { data } ) }
               </div>
-          })} */}
+          })}
       </>
     )
 }
 
-const SingleMenuSection = ({ data }) => {
+function SingleMenuSection({ data }){
   if(!data){
     return (
       <>
@@ -70,7 +70,7 @@ const SingleMenuSection = ({ data }) => {
   
 }
 
-const Menu = ({ data }) => {
+export default function Menu({ data }){
     if(!data){
         return (
             <>
@@ -114,5 +114,3 @@ const Menu = ({ data }) => {
     )
     
 }
-
-export default Menu;

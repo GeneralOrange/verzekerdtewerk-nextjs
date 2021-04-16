@@ -4,8 +4,7 @@ import Menu from '../../components/Menu'
 import CardLayout from '../../components/CardLayout'
 import Footer from '../../components/Footer'
 
-export default function Category({ data })
-{
+export default function Category({ data }){
 
     return (
         <>
@@ -18,7 +17,7 @@ export default function Category({ data })
       )
 }
 
-const evalHeadings = ({ data }) => {
+function evalHeadings({ data }){
     if(!data){
         return;
     }
@@ -38,7 +37,7 @@ const evalHeadings = ({ data }) => {
     }
 }
 
-const evalHeaderBanner = ({ data }) => {
+function evalHeaderBanner({ data }){
     if(!data){
         return;
     }

@@ -1,8 +1,7 @@
 import Content from './Content'
 import styles from '../../styles/flexcontent/FlexContent.module.css'
 
-const FlexContentController = ({ data }) =>
-{
+export default function FlexContentController({ data }){
     if(!data){
         return (
             <>
@@ -25,7 +24,7 @@ const FlexContentController = ({ data }) =>
     )
 }
 
-const FlexContentDistrubutor = ({ component }) => {
+function FlexContentDistrubutor({ component }){
     switch(component.__component){
         case 'custom.content':
             return (
@@ -48,5 +47,3 @@ const FlexContentDistrubutor = ({ component }) => {
             break;
     }
 }
-
-export default FlexContentController;

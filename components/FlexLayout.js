@@ -1,7 +1,7 @@
 import FlexContentController from './flexcontent/FlexContentController'
 import Sidebar from './Sidebar'
 
-const FlexLayout = ({ data, sidebar }) => {
+export default function FlexLayout({ data, sidebar }){
     if(!data && !sidebar){
         return (
             <>
@@ -38,5 +38,3 @@ const FlexLayout = ({ data, sidebar }) => {
         </>
     )
 }
-
-export default FlexLayout;

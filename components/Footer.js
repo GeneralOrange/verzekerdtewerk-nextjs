@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/footer/Footer.module.css'
 
-const FooterSections = ({ data }) => {
+function FooterSections({ data }){
     if(!data){
         return (
         <>
@@ -26,7 +26,7 @@ const FooterSections = ({ data }) => {
     )
 }
 
-const SingleFooterSection = ({ data }) => {
+function SingleFooterSection({ data }){
   if(!data){
     return (
       <>
@@ -62,7 +62,7 @@ const SingleFooterSection = ({ data }) => {
   
 }
 
-const Footer = ({ data }) => {
+export default function Footer({ data }){
     if(!data){
         return (
             <>
@@ -104,5 +104,3 @@ const Footer = ({ data }) => {
     )
     
 }
-
-export default Footer;

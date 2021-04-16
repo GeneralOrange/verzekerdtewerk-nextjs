@@ -1,7 +1,7 @@
 import Cards from './flexcontent/Cards'
 import Sidebar from './Sidebar'
 
-const CardLayout = ({ data, sidebar }) => {
+export default function CardLayout({ data, sidebar }){
     if(!data && !sidebar){
         return (
             <>
@@ -38,5 +38,3 @@ const CardLayout = ({ data, sidebar }) => {
         </>
     )
 }
-
-export default CardLayout;
