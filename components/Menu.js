@@ -20,14 +20,14 @@ const MenuSections = ({ data }) => {
 
     return (
       <>
-          { data.menu_section.map((data, index) => {
+          {/* { data.menu_section.map((data, index) => {
               <div key={index} className={`${styles.MenuItem} js-MenuItemToggle`} onClick={handleToggleSection}>
                   <div className={`${styles.MenuItem__name} js-MenuItemToggle`}>
                     {data.name}
                   </div>
                   { SingleMenuSection( { data } ) }
               </div>
-          })}
+          })} */}
       </>
     )
 }
