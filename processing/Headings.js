@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const SortMeta = ( value, index ) => {
+export function SortMeta( value, index ){
    
     switch(value.sort){
         case 'title':
@@ -24,7 +24,7 @@ const SortMeta = ( value, index ) => {
     }
 }
 
-const MetaFields = ({ data }) => {
+export function MetaFields({ data }){
     if(!data.meta_fields){
         return;
     }
@@ -38,7 +38,7 @@ const MetaFields = ({ data }) => {
     )
 }
 
-const RichSnippet = ({ data }) => {
+export function RichSnippet({ data }){
     if(!data.rich_snippet){
         return
     }
@@ -54,7 +54,7 @@ const RichSnippet = ({ data }) => {
     )
 }
 
-const Headings = ({ data }) => {
+export default function Headings({ data }){
     if(!data){
         return (
             <>
@@ -73,5 +73,3 @@ const Headings = ({ data }) => {
     )
    
 }
-
-export default Headings;

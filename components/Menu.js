@@ -2,15 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/menu/Menu.module.css'
 
-function handleToggleSection(e){
-  if(!e.target || !e.target.classList.contains('js-MenuItemToggle')){
+export function handleToggleSection(e){
+  if(!e.target.classList.contains('js-MenuItemToggle')){
     return;
   }
 
   e.target.parentElement.querySelector('.js-MenuSectionToggle').classList.toggle('active');
 }
 
-function MenuSections({ data }){
+export function MenuSections({ data }){
     if(!data || !data.menu_section){
         return (
         <>
@@ -32,7 +32,7 @@ function MenuSections({ data }){
     )
 }
 
-function SingleMenuSection({ data }){
+export function SingleMenuSection({ data }){
   if(!data){
     return (
       <>
