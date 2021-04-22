@@ -1,3 +1,5 @@
+import { getStrapiMedia } from '../lib/media'
+
 import styles from '../styles/header/HeaderBanner.module.css'
 import MarkDown from '../processing/MarkDown'
 
@@ -29,7 +31,6 @@ export default function HeaderBanner({ data, homepage }){
         )  
     }
     
-    const ImagePath = process.env.API_ENDPOINT+data.image.url;
     return (
         <>
             <div className={styles.HeaderBanner}>
@@ -43,7 +44,7 @@ export default function HeaderBanner({ data, homepage }){
                     </div>
                 </div>
                 
-                <img src={ImagePath} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} />
+                <img src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} />
             </div>
         </>
     )    

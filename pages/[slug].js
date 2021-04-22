@@ -1,8 +1,11 @@
+import { fetchAPI } from '../lib/api'
+
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
 import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/Footer'
+
 
 export default function Page({ data })
 {
@@ -19,8 +22,7 @@ export default function Page({ data })
 
 
 export async function getStaticPaths() {
-    const res = await fetch(`${process.env.API_ENDPOINT}/pages`);
-    const pages = await res.json();
+    const pages = await fetchAPI('/pages');
 
     const paths = pages.map((page) => ({
         params: { slug: page.slug }
@@ -35,18 +37,14 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const { slug } = params;
 
-    const resPage = await fetch(`${process.env.API_ENDPOINT}/pages?slug=${slug}`);
-    const rawPageData = await resPage.json();
+    const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
     const page = rawPageData[0];
 
-    const resMenu = await fetch(`${process.env.API_ENDPOINT}/menu`);
-    const menu = await resMenu.json();
+    const menu = await fetchAPI('/menu');
 
-    const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
-    const footer = await resFooter.json();
+    const footer = await fetchAPI('/footer');
 
-    const resSidebar = await fetch(`${process.env.API_ENDPOINT}/sidebar`);
-    const rawSidebarData = await resSidebar.json();
+    const rawSidebarData = await fetchAPI('/sidebar');
     const sidebarBolean = page.sidebar;
 
     const sidebar = {

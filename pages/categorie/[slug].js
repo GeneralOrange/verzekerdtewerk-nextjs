@@ -1,3 +1,7 @@
+import { fetchAPI } from '../../lib/api'
+
+import { evalHeadings, evalHeaderBanner } from '../../lib/defaultData'
+
 import Headings from '../../processing/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/Menu'
@@ -17,40 +21,8 @@ export default function Category({ data }){
       )
 }
 
-function evalHeadings({ data }){
-    if(!data){
-        return;
-    }
-
-    return {
-        meta_fields : [
-            {
-                name : `Vindt hier alle informatie over ${data.category.name}!`,
-                sort : `title` 
-            },
-            {
-                name : `description`,
-                description : `Vindt hier alle informatie over ${data.category.name}!`,
-                sort : `description` 
-            }
-        ]    
-    }
-}
-
-function evalHeaderBanner({ data }){
-    if(!data){
-        return;
-    }
-
-    return {
-        content : `<h1>Categorie: ${data.category.name}</h1>`
-    }
-}
-
-
 export async function getStaticPaths() {
-    const res = await fetch(`${process.env.API_ENDPOINT}/categories`);
-    const categories = await res.json();
+    const categories = await fetchAPI('/categories');
 
     const paths = categories.map((category) => ({
         params: { slug: category.slug }
@@ -65,15 +37,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     const { slug } = params;
 
-    const resCategory = await fetch(`${process.env.API_ENDPOINT}/categories?slug=${slug}`);
-    const rawCategoryData = await resCategory.json();
+    const rawCategoryData = await fetchAPI(`/categories?slug=${slug}`);
     const category = rawCategoryData[0];
 
-    const resMenu = await fetch(`${process.env.API_ENDPOINT}/menu`);
-    const menu = await resMenu.json();
+    const menu = await fetchAPI('/menu');
 
-    const resSidebar = await fetch(`${process.env.API_ENDPOINT}/sidebar`);
-    const rawSidebarData = await resSidebar.json();
+    const rawSidebarData = await fetchAPI('/sidebar');
     const sidebarBolean = true;
 
     const sidebar = {
@@ -81,8 +50,7 @@ export async function getStaticProps({ params }) {
         sidebarBolean,
     }
 
-    const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
-    const footer = await resFooter.json();
+    const footer = await fetchAPI('/footer');
 
     const data = {
         category,

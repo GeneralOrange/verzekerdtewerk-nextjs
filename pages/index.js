@@ -1,3 +1,5 @@
+import { fetchAPI } from '../lib/api'
+
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
@@ -26,13 +28,9 @@ export default function Home({ data }) {
 export async function getStaticProps() {
   
   //get homepage from our api
-  const resHome = await fetch(`${process.env.API_ENDPOINT}/homepage`);
-  const resMenu = await fetch(`${process.env.API_ENDPOINT}/menu`);
-  const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
-  
-  const homepage = await resHome.json();
-  const menu = await resMenu.json();
-  const footer = await resFooter.json();
+  const homepage = await fetchAPI('/homepage');
+  const menu = await fetchAPI('/menu');
+  const footer = await fetchAPI('/footer');
 
   const data = {
     homepage,
