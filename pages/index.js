@@ -17,7 +17,7 @@ export default function Home({ data }) {
   return (
     <>
       <Headings data={data.homepage.meta_data} />
-      <Menu data={ data.menu }/>
+      <Menu data={ data.menu } />
       <HeaderBanner data={data.homepage.header} homepage={true} />
       <FlexLayout data={data.homepage.flexcontent} sidebar={false} />
       <Footer data={data.footer}/>

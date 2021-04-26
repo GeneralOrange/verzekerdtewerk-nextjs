@@ -36,9 +36,6 @@
     top: 100%;
     width: 100%;
     left: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-100%);
     transition-property: opacity, transform;
     transition-duration: 300ms;
     transition-timing-function: ease;
