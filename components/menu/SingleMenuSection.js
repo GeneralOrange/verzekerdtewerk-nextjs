@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import DropDownMenu from './DropDownMenu'
 
-import styles from '../../styles/menu/Menu.module.css'
+import styles from '../../styles/menu/Menu.module.scss'
 
 export default function SingleMenuSection({ data }){
     if(!data){

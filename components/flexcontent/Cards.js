@@ -1,5 +1,5 @@
 import Card from './Card'
-import styles from '../../styles/flexcontent/Cards.module.css'
+import styles from '../../styles/flexcontent/Cards.module.scss'
 
 export default function Cards({ data }){
     if(!data){

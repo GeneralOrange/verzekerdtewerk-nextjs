@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../styles/footer/Footer.module.css'
+import styles from '../styles/footer/Footer.module.scss'
 
 function FooterSections({ data }){
     if(!data){

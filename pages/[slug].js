@@ -3,6 +3,7 @@ import { fetchAPI } from '../lib/api'
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
+import Breadcrumbs from '../components/Breadcrumbs'
 import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/Footer'
 
@@ -14,6 +15,7 @@ export default function Page({ data })
           <Headings data={data.page.meta_data} />
           <Menu data={ data.menu }/>
           <HeaderBanner data={data.page.header} />
+          <Breadcrumbs data={data.page} />
           <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
           <Footer data={data.footer}/>
         </>

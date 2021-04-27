@@ -1,5 +1,5 @@
 import Content from './Content'
-import styles from '../../styles/flexcontent/FlexContent.module.css'
+import styles from '../../styles/flexcontent/FlexContent.module.scss'
 
 export default function FlexContentController({ data }){
     if(!data){

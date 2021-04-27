@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import MarkDown from '../processing/MarkDown'
-import styles from '../styles/Sidebar.module.css'
+import styles from '../styles/Sidebar.module.scss'
 
 export default function Sidebar({ data }){
     if(!data){

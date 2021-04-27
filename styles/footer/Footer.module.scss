@@ -1,0 +1,66 @@
+@import '../variables/color';
+
+.Logo {
+    cursor: pointer;
+    float: left;
+    margin-right: 30px;
+}
+
+.Footer {
+    background-color: map-get($colors, 'text');
+    padding: 50px 0;
+    color: white;
+
+    &__title {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    &__top {
+        border-bottom: 1px solid map-get($colors, 'primary-light');
+        padding: 30px 0;
+    }
+
+    &__bottom {
+        padding: 30px 0;
+    }
+}
+
+.FooterItem {
+    &__name {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid map-get($colors, 'primary-light');
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+
+.FooterSection {
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            padding: 10px 0;
+            font-weight: bold;
+            cursor: pointer;
+            transition-property: all;
+            transition-timing-function: ease;
+            transition-duration: 300ms;
+
+            &:hover {
+                padding: 10px 10px;
+                border-left: 3px solid white;
+            }
+        }
+    }
+
+    &__innerText {}
+}

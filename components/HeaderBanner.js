@@ -1,7 +1,8 @@
 import { getStrapiMedia } from '../lib/media'
 
-import styles from '../styles/header/HeaderBanner.module.css'
 import MarkDown from '../processing/MarkDown'
+
+import styles from '../styles/header/HeaderBanner.module.scss'
 
 export default function HeaderBanner({ data, homepage }){
     if(!data){

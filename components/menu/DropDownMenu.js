@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import styles from '../../styles/menu/Menu.module.css'
+import styles from '../../styles/menu/Menu.module.scss'
 
 export default function DropDownMenu({ data })
 {

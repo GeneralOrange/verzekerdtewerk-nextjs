@@ -1,0 +1,33 @@
+@import '../variables/color';
+
+.HeaderBanner {
+    position: relative;
+    color: map-get($colors, 'text');
+
+    &__inner {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 200px;
+    }
+
+    &__innerHomepage,
+    &__imageHomepage {
+        min-height: 400px;
+    }
+
+    &__image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        object-fit: cover;
+        background-color: map-get($colors, 'primary');
+        min-height: 200px;
+        filter: brightness(.5);
+    }
+}

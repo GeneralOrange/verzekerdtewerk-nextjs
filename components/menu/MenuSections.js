@@ -1,6 +1,6 @@
 import SingleMenuSection from './SingleMenuSection'
 
-import styles from '../../styles/menu/Menu.module.css'
+import styles from '../../styles/menu/Menu.module.scss'
 
 export default function MenuSections({ data }){
     if(!data || !data.menu_section){

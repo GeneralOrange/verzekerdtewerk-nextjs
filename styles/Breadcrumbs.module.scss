@@ -1,0 +1,33 @@
+@import './variables/color';
+
+.Breadcrumbs {
+    background-color: map-get($colors, 'text');
+    color: white;
+
+    &__home {
+        font: {
+            size: 25px;
+        }
+
+        &:hover {
+            color: map-get($colors, 'secondairy');
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        min-height: 50px;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        list-style-type: none;
+        padding-right: 15px;
+        font: {
+            weight: bold;
+        }
+    }
+}

@@ -2,15 +2,7 @@ import MenuSections from './menu/MenuSections'
 
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../styles/menu/Menu.module.css'
-
-// function handleToggleSection(e){
-//   if(!e.target.classList.contains('js-MenuItemToggle')){
-//     return;
-//   }
-
-//   e.target.parentElement.querySelector('.js-MenuSectionToggle').classList.toggle('active');
-// }
+import styles from '../styles/menu/Menu.module.scss'
 
 export default function Menu({ data }){
     if(!data){

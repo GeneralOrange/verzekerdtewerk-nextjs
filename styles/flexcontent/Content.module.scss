@@ -1,6 +1,8 @@
+@import '../variables/color';
+
 .Content {
     font-size: 14px;
     font-weight: 600;
     font-family: inherit;
-    color: #353231;
+    color: map-get($colors, 'text');
 }
