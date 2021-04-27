@@ -16,12 +16,12 @@ export default function SingleMenuSection({ data }){
   
     return (
       <>
-        <div id={data.id} className={styles.MenuItem__name} onClick={()=> setToggle(!toggle)}>
-          {data.name}
-        </div>
-
-        { toggle && <DropDownMenu data={data} /> }
-        
+        <div className={styles.MenuItem__wrapper} onMouseEnter={()=> setToggle(true)} onMouseLeave={()=> setToggle(false)}>
+          <div id={data.id} className={styles.MenuItem__name}>
+            {data.name}
+          </div>
+            { toggle && <DropDownMenu data={data} /> }     
+        </div> 
       </>
     )
     

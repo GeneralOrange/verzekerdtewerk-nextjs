@@ -19,14 +19,21 @@
     position: relative;
     cursor: pointer;
 
+    &:hover {
+        background-color: map-get($colors, 'primary-light');
+    }
+
     &__name {
         color: map-get($colors, 'text');
         font-weight: bold;
         padding: 5px 20px;
     }
 
-    &:hover {
-        background-color: map-get($colors, 'primary-light');
+    &__wrapper {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        min-width: 150px;
     }
 }
 
@@ -39,9 +46,6 @@
     top: 100%;
     width: 100%;
     left: 0;
-    transition-property: opacity, transform;
-    transition-duration: 300ms;
-    transition-timing-function: ease;
 
     &__list {
         padding: 0;

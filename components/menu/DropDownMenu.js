@@ -11,8 +11,6 @@ export default function DropDownMenu({ data })
         )
     }
 
-    // console.log(data);
-
     return (
         <>
             <div className={styles.MenuSection}>
