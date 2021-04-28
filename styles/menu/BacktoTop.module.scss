@@ -1,0 +1,27 @@
+@import '../variables/color';
+
+.BacktoTop {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: map-get($colors, 'text');
+
+    &:hover {
+        filter: brightness(1.2);
+    }
+
+    &__icon {
+        color: white;
+        font: {
+            size: 30px;
+        }
+    }
+}

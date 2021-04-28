@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import BacktoTop from './BacktoTop'
 import MenuSections from './menu/MenuSections'
 
 import styles from '../styles/menu/Menu.module.scss'
@@ -15,12 +16,15 @@ export default function Menu({ data }){
     }
 
     const [scrollMenu, setScrollMenu] = useState(false);
+    const [BacktoTopBoolean, setBacktoTop] = useState(false);
 
     const handleScroll = () => {
       if(scrollY > 150){
         setScrollMenu(true);
+        setBacktoTop(true);
       } else if(scrollY < 50) {
         setScrollMenu(false);
+        setBacktoTop(false);
       }
     }
 
@@ -64,6 +68,7 @@ export default function Menu({ data }){
             </div>
           </div>
         </div>
+        { BacktoTopBoolean && <BacktoTop />}
       </>
     )
     
