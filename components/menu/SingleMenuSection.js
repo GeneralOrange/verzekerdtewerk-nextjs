@@ -16,7 +16,7 @@ export default function SingleMenuSection({ data }){
   
     return (
       <>
-        <div className={styles.MenuItem__wrapper} onMouseEnter={()=> setToggle(true)} onMouseLeave={()=> setToggle(false)}>
+        <div className={`${styles.MenuItem__wrapper} ${toggle && styles.MenuItem__wrapperActive}`} onMouseEnter={()=> setToggle(true)} onMouseLeave={()=> setToggle(false)}>
           <div id={data.id} className={styles.MenuItem__name}>
             {data.name}
           </div>

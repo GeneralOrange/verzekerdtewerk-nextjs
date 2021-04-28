@@ -1,4 +1,5 @@
 @import '../variables/color';
+@import '../variables/animations';
 
 .Menu {
     display: flex;
@@ -7,11 +8,20 @@
         position: sticky;
         top: 0;
         z-index: 1;
-        min-height: 100px;
         background-color: map-get($colors, 'secondairy');
         border-bottom: 3px solid map-get($colors, 'primary');
         display: flex;
+        height: 130px;
         align-items: flex-end;
+        transition: {
+            property: height;
+            timing-function: ease;
+            duration: 300ms;
+        }
+    }
+
+    &__outerScrollMenu {
+        height: 35px;
     }
 }
 
@@ -30,10 +40,17 @@
     }
 
     &__wrapper {
-        min-width: 100%;
         display: flex;
         justify-content: center;
         min-width: 150px;
+    }
+
+    &__wrapperActive {
+       .MenuSection {
+           animation-name: DropDownSlide;
+           animation-duration: 400ms;
+           pointer-events: all;
+       }
     }
 }
 
@@ -46,6 +63,12 @@
     top: 100%;
     width: 100%;
     left: 0;
+    pointer-events: none;
+    transition: {
+        property: transform, opacity;
+        timing-function: ease;
+        duration: 300ms;
+    };
 
     &__list {
         padding: 0;
