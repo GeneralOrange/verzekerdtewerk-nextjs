@@ -1,6 +1,10 @@
+import { fetchAPI } from '../../lib/api'
+
+import { evalHeadings, evalBreadcrumbs } from '../../lib/defaultData'
 import Headings from '../../processing/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/Menu'
+import Breadcrumbs from '../../components/Breadcrumbs'
 import CardLayout from '../../components/CardLayout'
 import Footer from '../../components/Footer'
 
@@ -12,35 +16,20 @@ export default function CategoryCollection({ data }) {
         )
     }
 
+    const breadcrumbData = {
+        name : 'Categorie'
+    }
+
     return (
         <>
             <Headings data={ evalHeadings({ data }) } />
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
-            <CardLayout data={ data.categories } />
+            <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } />
+            <CardLayout data={ data.categories } sidebar={ false } uri={ '/categorie' }/>
             <Footer data={data.footer}/>
         </>
     )
-}
-
-const evalHeadings = ({ data }) => {
-    if(!data){
-        return;
-    }
-
-    return {
-        meta_fields : [
-            {
-                name : `Vindt hier alle informatie over categorieën!`,
-                sort : `title` 
-            },
-            {
-                name : `description`,
-                description : `Vindt hier alle informatie over categorieën!`,
-                sort : `description` 
-            }
-        ]    
-    }
 }
 
 const evalHeaderBanner = ({ data }) => {
@@ -54,13 +43,9 @@ const evalHeaderBanner = ({ data }) => {
 }
 
 export async function getStaticProps() {
-    const resCategories = await fetch(`${process.env.API_ENDPOINT}/categories`);
-    const resMenu = await fetch(`${process.env.API_ENDPOINT}/menu`);
-    const resFooter = await fetch(`${process.env.API_ENDPOINT}/footer`);
-
-    const categories = await resCategories.json();
-    const menu = await resMenu.json();
-    const footer = await resFooter.json();
+    const categories = await fetchAPI('/categories');
+    const menu = await fetchAPI('/menu');
+    const footer = await fetchAPI('/footer');
 
     const data = {
         categories,

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/flexcontent/Card.module.scss'
 
-export default function Card({ data }){
+export default function Card({ data, uri }){
     if(!data){
         return (
             <>
@@ -12,7 +12,7 @@ export default function Card({ data }){
 
     return (
         <>
-            <Link href={`/${data.slug}`}>
+            <Link href={`${uri ? uri : ''}/${data.slug}`}>
                 <a>
                     <div className={styles.Card}>
                         <Image

@@ -1,7 +1,7 @@
 import Cards from './flexcontent/Cards'
 import Sidebar from './Sidebar'
 
-export default function CardLayout({ data, sidebar }){
+export default function CardLayout({ data, sidebar, uri }){
     if(!data && !sidebar){
         return (
             <>
@@ -9,13 +9,13 @@ export default function CardLayout({ data, sidebar }){
         )
     }
 
-    if(!sidebar || !sidebar.sidebarBolean){
+    if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <Cards data={data}/>
+                            <Cards data={data} uri={ uri }/>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ export default function CardLayout({ data, sidebar }){
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-lg-8">
-                        <Cards data={data}/>
+                        <Cards data={data} uri={ uri }/>
                     </div>
                     <div className="col-12 col-lg-4">
                         <Sidebar data={sidebar.rawSidebarData}/>

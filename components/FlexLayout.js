@@ -9,7 +9,7 @@ export default function FlexLayout({ data, sidebar }){
         )
     }
 
-    if(!sidebar.sidebarBolean){
+    if(!sidebar.sidebarBoolean){
         return (
             <>
                 <div className="container">

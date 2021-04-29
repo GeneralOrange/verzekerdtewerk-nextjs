@@ -1,4 +1,5 @@
 module.exports = {
+    trailingSlash: true,
     env: {
         API_ENDPOINT: process.env.API_ENDPOINT
     },

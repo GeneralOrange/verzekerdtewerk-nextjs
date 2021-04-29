@@ -5,6 +5,7 @@ import { evalHeadings, evalHeaderBanner } from '../../lib/defaultData'
 import Headings from '../../processing/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/Menu'
+import Breadcrumbs from '../../components/Breadcrumbs'
 import CardLayout from '../../components/CardLayout'
 import Footer from '../../components/Footer'
 
@@ -14,7 +15,8 @@ export default function Category({ data }){
         <>
             <Headings data={ evalHeadings({ data }) } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ evalHeaderBanner({ data }) }/>
+            <HeaderBanner data={ evalHeaderBanner({ data }) } />
+            <Breadcrumbs data={ data.category } />
             <CardLayout data={ data.category.pages } sidebar={ data.sidebar } />
             <Footer data={data.footer}/>
         </>
@@ -43,11 +45,11 @@ export async function getStaticProps({ params }) {
     const menu = await fetchAPI('/menu');
 
     const rawSidebarData = await fetchAPI('/sidebar');
-    const sidebarBolean = true;
+    const sidebarBoolean = true;
 
     const sidebar = {
         rawSidebarData,
-        sidebarBolean,
+        sidebarBoolean,
     }
 
     const footer = await fetchAPI('/footer');
