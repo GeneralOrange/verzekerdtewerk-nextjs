@@ -25,7 +25,7 @@ export default function Page({ data })
 }
 
 
-export async function getInitialProps() {
+export async function getStaticPaths() {
     const pages = await fetchAPI('/pages');
 
     const paths = pages.map((page) => ({
@@ -40,7 +40,7 @@ export async function getInitialProps() {
     }
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
     const { slug } = params;
 
     const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
