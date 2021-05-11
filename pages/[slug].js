@@ -5,6 +5,7 @@ import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/Menu'
 import Breadcrumbs from '../components/Breadcrumbs'
 import FlexLayout from '../components/FlexLayout'
+import CardSlider from '../components/flexcontent/CardSlider'
 import Footer from '../components/Footer'
 
 
@@ -17,6 +18,7 @@ export default function Page({ data })
           <HeaderBanner data={data.page.header} />
           <Breadcrumbs data={data.page} />
           <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
+          <CardSlider data={data.relatedPages} />
           <Footer data={data.footer}/>
         </>
       )
@@ -27,7 +29,9 @@ export async function getStaticPaths() {
     const pages = await fetchAPI('/pages');
 
     const paths = pages.map((page) => ({
-        params: { slug: page.slug }
+        params: { 
+            slug: page.slug
+        }
     }))
 
     return {
@@ -41,9 +45,18 @@ export async function getStaticProps({ params }) {
 
     const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
     const page = rawPageData[0];
+    const pageID = page.id;
+
+    const categories = await fetchAPI(`/categories?pages=${pageID}`);
+    let relatedPages = [];
+
+    categories.forEach(category => {
+        category.pages = category.pages.filter(page => page.id !== pageID);
+        relatedPages.push(...category.pages);
+    });
 
     const menu = await fetchAPI('/menu');
-
+    
     const footer = await fetchAPI('/footer');
 
     const rawSidebarData = await fetchAPI('/sidebar');
@@ -58,7 +71,8 @@ export async function getStaticProps({ params }) {
         page,
         menu,
         sidebar,
-        footer
+        footer,
+        relatedPages
     }
 
     return {
