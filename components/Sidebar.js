@@ -57,7 +57,7 @@ function CTA({ ctaData }){
         )
     }
 
-    const ImagePath = process.env.API_ENDPOINT+ctaData.image.url;
+    // const ImagePath = process.env.API_ENDPOINT+ctaData.image.url;
 
     return (
         <div className={styles.Sidebar__cta}>
@@ -65,7 +65,7 @@ function CTA({ ctaData }){
                 <MarkDown data={ctaData.content}/>
             </div>
             <div className={styles.Sidebar__ctaImageContainer}>
-                <img src={ImagePath} alt={ctaData.image.alternativeText}/>
+                {/* <img src={ImagePath} alt={ctaData.image.alternativeText}/> */}
             </div>
         </div>
     )
