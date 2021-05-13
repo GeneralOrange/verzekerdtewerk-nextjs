@@ -6,6 +6,7 @@ module.exports = {
     images: {
         domains: [
                 'localhost',
+                'https://www.verzekerdtewerk.nl/',
                 'https://verzekerdtewerk-strapi.herokuapp.com/'
             ]
     }

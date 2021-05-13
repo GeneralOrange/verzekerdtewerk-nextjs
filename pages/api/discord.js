@@ -1,4 +1,5 @@
 module.exports = (req, res) => {
+    
     const webhook_url = 'https://discord.com/api/webhooks/842522800699080735/V4EPKnHNauwJgFoCnJD6FOcLCsDGjftZvjIZO0bd2-VIAIbb3kwMnYAmXfB6pQIZ3D1w?wait=true';
 
     const msg = {
@@ -12,4 +13,6 @@ module.exports = (req, res) => {
         },
         "body": JSON.stringify(msg)
     })
-  }
+    .then(a=>a.json())
+    .then(res.send('Message sent!'))
+}
