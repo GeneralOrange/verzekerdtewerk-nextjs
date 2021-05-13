@@ -7,6 +7,7 @@
     align-items: center;
     padding: 15px;
     border-bottom: 3px solid transparent;
+    margin-bottom: 30px;
 
     &:hover {
         border-bottom: 3px solid map-get($colors, 'primary');
