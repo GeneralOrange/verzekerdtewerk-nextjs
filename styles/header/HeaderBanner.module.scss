@@ -3,6 +3,7 @@
 .HeaderBanner {
     position: relative;
     color: map-get($colors, 'text');
+    z-index: 0;
 
     &__inner {
         color: white;
