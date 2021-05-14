@@ -1,0 +1,24 @@
+.CardSlider {
+
+    &__title {
+        margin-bottom: 30px;
+        display: block;
+        font: {
+            size: 24px;
+            weight: 500;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__item {
+        margin-right: 15px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

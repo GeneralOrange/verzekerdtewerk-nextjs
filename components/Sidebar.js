@@ -1,13 +1,14 @@
 import Link from 'next/link'
+import { getStrapiMedia } from '../lib/media'
+
+import SearchForm from '../components/atoms/SearchForm'
+
 import MarkDown from '../processing/MarkDown'
 import styles from '../styles/Sidebar.module.scss'
 
 export default function Sidebar({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        );
+        return null;
     }
     
     const categories = data.categories;
@@ -15,6 +16,7 @@ export default function Sidebar({ data }){
 
     return (
         <>
+            <SearchForm/>
             <div className={styles.Sidebar}>
                 <h3 className={styles.Sidebar__title}>Bekijk 1 van onze andere categorieën</h3>
                 {CategoryList({ categories })}
@@ -26,10 +28,7 @@ export default function Sidebar({ data }){
 
 function CategoryList({ categories }){
     if(!categories){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     return (
@@ -51,13 +50,8 @@ function CategoryList({ categories }){
 
 function CTA({ ctaData }){
     if(!ctaData){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
-
-    // const ImagePath = process.env.API_ENDPOINT+ctaData.image.url;
 
     return (
         <div className={styles.Sidebar__cta}>
@@ -65,7 +59,7 @@ function CTA({ ctaData }){
                 <MarkDown data={ctaData.content}/>
             </div>
             <div className={styles.Sidebar__ctaImageContainer}>
-                {/* <img src={ImagePath} alt={ctaData.image.alternativeText}/> */}
+                <img src={getStrapiMedia(ctaData.image)} alt={ctaData.image.alternativeText}/>
             </div>
         </div>
     )

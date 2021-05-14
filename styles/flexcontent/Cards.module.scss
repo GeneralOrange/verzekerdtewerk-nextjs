@@ -15,21 +15,4 @@
     &__wrapper {
         position: relative;
     }
-
-    &__button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 50px;
-        display: flex;
-        align-items: center;
-        z-index: 2;
-        color: map-get($colors, 'primary');
-
-        &:hover {
-            cursor: pointer;
-            color: map-get($colors, 'primary-light');
-        }
-    }
 }
