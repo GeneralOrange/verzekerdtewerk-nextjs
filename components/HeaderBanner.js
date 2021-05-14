@@ -20,8 +20,9 @@ export default function HeaderBanner({ data, homepage }){
                     <div className="container">
                         <div className="row">
                             <div className="col-12">
-                                <div className={styles.HeaderBanner__inner}>
+                                <div className={`${styles.HeaderBanner__inner} ${homepage ? styles.HeaderBanner__innerHomepage : ''}`}>
                                     <MarkDown data={data.content} />
+                                    { homepage && <SearchForm/> }
                                 </div>
                             </div>
                         </div>
