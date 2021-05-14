@@ -59,7 +59,7 @@ function CTA({ ctaData }){
                 <MarkDown data={ctaData.content}/>
             </div>
             <div className={styles.Sidebar__ctaImageContainer}>
-                <img src={getStrapiMedia(ctaData.image)} alt={ctaData.image.alternativeText}/>
+                {ctaData.image && <img src={getStrapiMedia(ctaData.image)} alt={ctaData.image.alternativeText}/>}
             </div>
         </div>
     )
