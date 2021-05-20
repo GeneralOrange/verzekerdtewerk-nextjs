@@ -6,7 +6,7 @@ import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import CardLayout from '../../components/CardLayout'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer/Footer'
 
 export default function CategoryCollection({ data }) {
     if(!data){
