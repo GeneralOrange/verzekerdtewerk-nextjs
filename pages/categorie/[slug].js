@@ -4,10 +4,10 @@ import { evalHeadings, evalHeaderBanner } from '../../lib/defaultData'
 
 import Headings from '../../processing/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
-import Menu from '../../components/Menu'
+import Menu from '../../components/menu/Menu'
 import Breadcrumbs from '../../components/Breadcrumbs'
 import CardLayout from '../../components/CardLayout'
-import Footer from '../../components/Footer'
+import Footer from '../../components/footer/Footer'
 
 export default function Category({ data }){
 

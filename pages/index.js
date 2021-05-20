@@ -2,16 +2,13 @@ import { fetchAPI } from '../lib/api'
 
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
-import Menu from '../components/Menu'
+import Menu from '../components/menu/Menu'
 import FlexLayout from '../components/FlexLayout'
-import Footer from '../components/Footer'
+import Footer from '../components/footer/Footer'
 
 export default function Home({ data }) {
   if(!data){
-    return (
-      <>
-      </>
-    )
+    return null;
   }
   
   return (

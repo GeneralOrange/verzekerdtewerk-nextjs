@@ -2,11 +2,11 @@ import { fetchAPI } from '../lib/api'
 
 import Headings from '../processing/Headings'
 import HeaderBanner from '../components/HeaderBanner'
-import Menu from '../components/Menu'
+import Menu from '../components/menu/Menu'
 import Breadcrumbs from '../components/Breadcrumbs'
 import FlexLayout from '../components/FlexLayout'
 import CardSlider from '../components/flexcontent/CardSlider'
-import Footer from '../components/Footer'
+import Footer from '../components/footer/Footer'
 
 
 export default function Page({ data })

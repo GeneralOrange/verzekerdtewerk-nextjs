@@ -1,3 +1,5 @@
+import { Container, Row, Col } from 'react-bootstrap'
+
 import FlexContentController from './flexcontent/FlexContentController'
 import Sidebar from './Sidebar'
 
@@ -12,29 +14,29 @@ export default function FlexLayout({ data, sidebar }){
     if(!sidebar.sidebarBoolean){
         return (
             <>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
+                <Container>
+                    <Row>
+                        <Col>
                             <FlexContentController data={data}/>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </>
         )
     }
 
     return (
         <>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-lg-8">
+            <Container>
+                <Row>
+                    <Col lg={8}>
                         <FlexContentController data={data}/>
-                    </div>
-                    <div className="col-12 col-lg-4">
+                    </Col>
+                    <Col lg={4}>
                         <Sidebar data={sidebar.rawSidebarData}/>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }

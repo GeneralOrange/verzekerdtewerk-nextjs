@@ -1,37 +1,23 @@
-import { useState } from 'react'
-
-import DropDownMenu from './DropDownMenu'
-
-import styles from '../../styles/menu/Menu.module.scss'
+import { NavDropdown } from 'react-bootstrap'
 
 export default function SingleMenuSection({ data }){
     if(!data){
       return null;
     }
 
-    const [toggle, setToggle] =  useState(false);
-
-    let timeout = null;
-
-    const handleToggleTrue = () => {
-      clearTimeout(timeout);
-      setToggle(true);
-    }
-
-    const handleToggleFalse = () => {
-      timeout = setTimeout(()=> {
-        setToggle(false)
-      },500)
-    }
-  
     return (
       <>
-        <div className={`${styles.MenuItem__wrapper} ${toggle && styles.MenuItem__wrapperActive}`} onMouseEnter={handleToggleTrue} onMouseLeave={handleToggleFalse}>
-          <div id={data.id} className={styles.MenuItem__name}>
-            {data.name}
-          </div>
-            { toggle && <DropDownMenu data={data} /> }     
-        </div> 
+        {data.content && <NavDropdown.Item>
+          {data.content}
+        </NavDropdown.Item>}
+        <NavDropdown.Divider />
+        {data.pages.map(page => (
+          <NavDropdown.Item
+            key={page.id}
+            href={`/${page.slug}`}>
+              {page.name}
+          </NavDropdown.Item>
+        ))}
       </>
     )
     
