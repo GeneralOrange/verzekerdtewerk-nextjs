@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Navbar, Nav } from 'react-bootstrap'
 
 import BacktoTop from '../BacktoTop'
-import MenuSections from './MenuSections'
+import MenuComponents from './MenuComponents'
 
 import styles from '../../styles/menu/Menu.module.scss'
 
@@ -60,7 +60,9 @@ export default function Menu({ data }){
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <MenuSections data={ data } />
+            <Nav className="mr-auto">
+              <MenuComponents components={ data.menu_components } />
+            </Nav>
           </Navbar.Collapse>
         </Container>
         { BacktoTopBoolean && <BacktoTop />}

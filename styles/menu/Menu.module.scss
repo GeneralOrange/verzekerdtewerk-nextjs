@@ -14,4 +14,8 @@
             border-bottom: 3px solid map-get($colors, 'primary');
         }
     }
+
+    &__dropdown {
+        background-color: black;
+    }
 }

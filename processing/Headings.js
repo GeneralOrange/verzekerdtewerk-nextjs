@@ -24,22 +24,22 @@ export function SortMeta( value, index ){
     }
 }
 
-export function MetaFields({ data }){
-    if(!data.meta_fields){
+export function MetaFields({ metaFieldData }){
+    if(!metaFieldData.meta_fields){
         return;
     }
 
     return (
         <>
-            {data.meta_fields.map((value, index) => (
+            {metaFieldData.meta_fields.map((value, index) => (
                 SortMeta(value, index)
             ))}
         </>
     )
 }
 
-export function RichSnippet({ data }){
-    if(!data.rich_snippet){
+export function RichSnippet({ metaFieldData }){
+    if(!metaFieldData.rich_snippet){
         return
     }
 
@@ -47,7 +47,7 @@ export function RichSnippet({ data }){
         <>
             <script type="application/ld+json">
                 {
-                    JSON.stringify(data.rich_snippet)
+                    JSON.stringify(metaFieldData.rich_snippet)
                 }
             </script>
         </>
@@ -56,18 +56,32 @@ export function RichSnippet({ data }){
 
 export default function Headings({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        );
+        return null;
     }
+
+    const metaFieldData = data.meta_data;
     
     return (
         <>
             <Head>
-                { MetaFields({ data }) } 
-                { RichSnippet({ data }) }
                 <link rel="shortcut icon" href="/logo.svg"/>
+                <meta name="robots" content="index, follow"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+                {/* <link rel="canonical" href={`/${data.slug}/`}></link> */}
+
+                { !metaFieldData && 
+                    <title>{`✅ Verzekerdtewerk ✅| ${data.name}`}</title>
+                }
+                { !metaFieldData && !data.flexcontent &&
+                    <meta name="description" description={`✅ Verzekerdtewerk ✅| Voor al uw klussen om en in het huis!`} />
+                }
+                { !metaFieldData && data.flexcontent &&
+                    <meta name="description" description={`✅ Verzekerdtewerk ✅| ${data.flexcontent[0].content}`} />
+                }
+
+                { metaFieldData && metaFieldData.meta_fields && MetaFields({ metaFieldData }) } 
+                { metaFieldData && metaFieldData.meta_fields && RichSnippet({ metaFieldData }) }
             </Head>
         </>
     )

@@ -13,7 +13,7 @@ export default function Page({ data })
 {
     return (
         <>
-          <Headings data={data.page.meta_data} />
+          <Headings data={data.page} />
           <Menu data={ data.menu }/>
           <HeaderBanner data={data.page.header} />
           <Breadcrumbs data={data.page} />

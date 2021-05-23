@@ -19,11 +19,13 @@ export default function SingleFooterSection({ data }){
               
               <Link
                 key={key}
-                href={`./${value.slug}`}
+                href={`/${value.slug}`}
               >
-                <li>
-                  {value.name}
-                </li>
+                <a>
+                  <li>
+                    {value.name}
+                  </li>
+                </a> 
               </Link>
               
             ))}
