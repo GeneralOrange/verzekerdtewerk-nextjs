@@ -1,6 +1,6 @@
 import { fetchAPI } from '../lib/api'
 
-import Headings from '../processing/Headings'
+import Headings from '../processing/metaData/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/menu/Menu'
 import Breadcrumbs from '../components/Breadcrumbs'

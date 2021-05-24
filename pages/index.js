@@ -1,6 +1,6 @@
 import { fetchAPI } from '../lib/api'
 
-import Headings from '../processing/Headings'
+import Headings from '../processing/metaData/Headings'
 import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/menu/Menu'
 import FlexLayout from '../components/FlexLayout'
@@ -13,7 +13,7 @@ export default function Home({ data }) {
   
   return (
     <>
-      <Headings data={data.homepage.meta_data} />
+      <Headings data={data.homepage} />
       <Menu data={ data.menu } />
       <HeaderBanner data={data.homepage.header} homepage={true} />
       <FlexLayout data={data.homepage.flexcontent} sidebar={false} />

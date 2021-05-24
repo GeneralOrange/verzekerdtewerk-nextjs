@@ -2,8 +2,7 @@ import unified from '../node_modules/unified'
 import markdown from '../node_modules/remark-parse'
 import html from '../node_modules/remark-html'
 
-const MarkDown = ({ data }) => 
-{
+export default function MarkDown({ data }){
     if(!data){
         return null;
     }
@@ -27,5 +26,3 @@ const MarkDown = ({ data }) =>
     )
     
 }
-
-export default MarkDown;

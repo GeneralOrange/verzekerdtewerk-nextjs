@@ -1,8 +1,8 @@
 import { fetchAPI } from '../../lib/api'
 
-import { evalHeadings, evalHeaderBanner } from '../../lib/defaultData'
+import { evalHeaderBanner } from '../../lib/defaultData'
 
-import Headings from '../../processing/Headings'
+import Headings from '../../processing/metaData/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
 import Breadcrumbs from '../../components/Breadcrumbs'
@@ -13,7 +13,7 @@ export default function Category({ data }){
 
     return (
         <>
-            <Headings data={ evalHeadings({ data }) } />
+            <Headings data={ data.category } />
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) } />
             <Breadcrumbs data={ data.category } />
