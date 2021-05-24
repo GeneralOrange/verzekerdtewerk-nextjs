@@ -9,11 +9,11 @@ export default function Headings({ data }){
         return null;
     }
 
+    //console.log(process.env.SITE);
+
     const linkStructure = evalLinkStructure({ data });
     const link = `${siteUrl}${linkStructure}`;
     const metaFieldData = data.meta_data;
-
-    console.log(metaFieldData);
 
     return (
         <>
