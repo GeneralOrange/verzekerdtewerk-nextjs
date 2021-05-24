@@ -1,6 +1,6 @@
 export default function RichSnippet({ metaFieldData }){
     if(!metaFieldData.rich_snippet){
-        return
+        return null;
     }
 
     return (

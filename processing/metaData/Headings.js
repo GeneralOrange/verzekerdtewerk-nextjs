@@ -3,7 +3,6 @@ import Head from 'next/head'
 import RichSnippet from './RichSnippet'
 import MetaFields from './MetaFields'
 import { siteUrl, evalLinkStructure } from '../../lib/defaultData'
-import MarkDown from '../MarkDown';
 
 export default function Headings({ data }){
     if(!data){
@@ -13,6 +12,8 @@ export default function Headings({ data }){
     const linkStructure = evalLinkStructure({ data });
     const link = `${siteUrl}${linkStructure}`;
     const metaFieldData = data.meta_data;
+
+    console.log(metaFieldData);
 
     return (
         <>
