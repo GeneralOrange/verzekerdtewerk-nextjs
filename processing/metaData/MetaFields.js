@@ -1,4 +1,4 @@
-import MarkDown from '../MarkDown'
+import MetaField from './MetaField'
 
 export default function MetaFields({ metaFieldData }){
     if(!metaFieldData.meta_fields){
@@ -6,6 +6,6 @@ export default function MetaFields({ metaFieldData }){
     }
 
     return metaFieldData.meta_fields.map(meta_field => (
-        <MarkDown data={ meta_field.meta_tag }/>
+        <MetaField content={ meta_field }/>
     ));
 }
