@@ -21,7 +21,7 @@ export default function MetaField({ content }){
             )
             break;
         default: 
-            //
+            return null;
             break;
     }
 }
