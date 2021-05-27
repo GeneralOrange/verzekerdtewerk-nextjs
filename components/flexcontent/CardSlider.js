@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-
 import Card from './Card'
 import styles from '../../styles/flexcontent/CardSlider.module.scss'
 

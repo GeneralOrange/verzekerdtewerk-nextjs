@@ -48,7 +48,7 @@ export default function HeaderBanner({ data, homepage }){
                     </div>
                 </div>
                 
-                <img src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} />
+                <img src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} alt=""/>
             </div>
         </>
     )    
