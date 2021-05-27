@@ -31,7 +31,7 @@ export default function Footer({ data }){
                       </div>
                   </Link>
                   <div className={styles.Footer__title}>
-                      Voor u klus!
+                      Voor uw klus!
                   </div>
                 </Col>
               </Row>
