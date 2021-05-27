@@ -14,7 +14,7 @@ export default function Cards({ data, uri }){
             <div className={styles.Cards}>
                 <div className="row">
                     {data.map((value, index) => (
-                        <div key={index} className="col-12 col-lg-3">
+                        <div key={index} className="col-12 col-lg-4">
                             <Card data={value} uri={ uri }/>  
                         </div>
                     ))}
