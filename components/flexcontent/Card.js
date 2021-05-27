@@ -27,7 +27,7 @@ export default function Card({ data, uri }){
                             {data.name}
                         </div>
                         <div className={styles.Card__description}>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            
                         </div>
 
                         <div className={styles.Card__button}>
