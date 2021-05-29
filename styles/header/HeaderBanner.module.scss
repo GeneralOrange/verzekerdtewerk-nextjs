@@ -4,6 +4,7 @@
     position: relative;
     color: map-get($colors, 'text');
     z-index: 0;
+    padding: 150px 0 0;
 
     &__inner {
         color: white;

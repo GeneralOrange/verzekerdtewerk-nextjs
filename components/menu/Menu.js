@@ -10,10 +10,7 @@ import styles from '../../styles/menu/Menu.module.scss'
 
 export default function Menu({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     const [isScrolling, setScrollMenu] = useState(false);
@@ -37,22 +34,27 @@ export default function Menu({ data }){
       }
     })
 
+    let MenuClass = styles.MenuNotScrolling;
+    let logoSrc = '/logo_white_large.png';
+
     let imageProps = {
-      w: 90,
-      h: 90
+      w: 120,
+      h: 80
     }
 
     if(isScrolling){
       imageProps.w = 50;
       imageProps.h = 50;
+      MenuClass = styles.Menu;
+      logoSrc = '/logo.svg';
     }
 
     return (
-      <Navbar className={styles.Menu} sticky="top" expand="lg">
+      <Navbar className={MenuClass} sticky="top" expand="lg">
         <Container>
           <Navbar.Brand href="/">
             <Image
-              src="/logo.svg"
+              src={logoSrc}
               alt="Logo"
               width={imageProps.w}
               height={imageProps.h}

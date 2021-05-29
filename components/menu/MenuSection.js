@@ -8,8 +8,9 @@ export default function MenuSection({ component }){
     }
 
     return (
-        <NavDropdown key={component.id} title={component.name} id="basic-nav-dropdown" className={styles.Menu__item}>
-            <NavDropdown.Item>
+        <NavDropdown key={component.id} title={component.name} id="basic-nav-dropdown" className={styles.Menu__dropdownToggle}>
+            <NavDropdown.Item
+                className={styles.Menu__dropdownItem}>
                 {component.content}
             </NavDropdown.Item>
             <NavDropdown.Divider />
@@ -17,6 +18,7 @@ export default function MenuSection({ component }){
             {component.pages.map(page => (
                 <NavDropdown.Item
                     key={page.id}
+                    className={styles.Menu__dropdownItem}
                     href={`/${page.slug}/`}>
                     {page.name}
                 </NavDropdown.Item>
@@ -25,6 +27,7 @@ export default function MenuSection({ component }){
             {component.categories.map(category => (
                 <NavDropdown.Item
                     key={category.id}
+                    className={styles.Menu__dropdownItem}
                     href={`/categorie/${category.slug}/`}>
                     {category.name}
                 </NavDropdown.Item>
