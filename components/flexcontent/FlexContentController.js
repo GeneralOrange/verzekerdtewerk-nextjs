@@ -1,5 +1,6 @@
 import Content from './Content'
 import Usp from './Usp'
+import CardSlider from '../flexcontent/CardSlider'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
 
 export default function FlexContentController({ data }){
@@ -34,12 +35,33 @@ function FlexContentDistrubutor({ component }){
                 <Usp uspData={ component }/>
             )
             break;
-        case 'custom.mailchimp-form':
+        case 'custom.cards':
+            let cards = [];
+
+            if(!component.pages && !component.categories){
+                return null;
+            }
+
+            if(component.pages){
+                cards = [
+                    ...cards,
+                    ...component.pages
+                ];
+            }
+
+            if(component.categories){
+                cards = [
+                    ...cards,
+                    ...component.categories
+                ];
+            }
+
             return (
-                <div>
-                    {component.enabled}
-                </div>
+                <CardSlider data={ cards } url={'/'}/>
             )
+            break;
+        case 'custom.mailchimp-form':
+            return null;
             break;
         default: 
             return null;

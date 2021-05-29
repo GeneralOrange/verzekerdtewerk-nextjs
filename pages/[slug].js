@@ -5,6 +5,7 @@ import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/menu/Menu'
 import Breadcrumbs from '../components/Breadcrumbs'
 import FlexLayout from '../components/FlexLayout'
+import { Container, Row, Col } from 'react-bootstrap'
 import CardSlider from '../components/flexcontent/CardSlider'
 import Footer from '../components/footer/Footer'
 
@@ -13,13 +14,22 @@ export default function Page({ data })
 {
     return (
         <>
-          <Headings data={data.page} />
-          <Menu data={ data.menu }/>
-          <HeaderBanner data={data.page.header} />
-          <Breadcrumbs data={data.page} />
-          <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
-          <CardSlider data={data.relatedPages} />
-          <Footer data={data.footer}/>
+            <Headings data={data.page} />
+            <Menu data={ data.menu }/>
+            <HeaderBanner data={data.page.header} />
+            <Breadcrumbs data={data.page} />
+            <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
+            <Container>
+                <Row>
+                    <Col sm={12}>
+                        <strong>
+                            Misschien kunnen we je helpen met:
+                        </strong>
+                    </Col>
+                </Row>
+            </Container>
+            <CardSlider data={data.relatedPages} />
+            <Footer data={data.footer}/>
         </>
       )
 }

@@ -2,19 +2,39 @@
 
 .Card {
     position: relative;
+    overflow: hidden;
     background-color: map-get($colors, 'secondairy');
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 115px 15px 15px;
     margin-bottom: 30px;
-    border-radius: 12px;
+    border-radius: 6px;
     max-width: 220px;
     min-width: 220px;
-    min-height: 270px;
+    min-height: 300px;
 
     &:hover {
         box-shadow: 10px 10px 5px -5px lightgrey;
+
+        .Card {
+            &__button {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__image {
+        position: absolute;
+        min-height: 100px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: map-get($colors, 'text');
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__name {
@@ -27,18 +47,29 @@
         max-width: 100%;
     }
 
+    &__description {
+        max-width: 100%;
+        padding: 0 15px 0 0;
+    }
+
     &__button {
         position: absolute;
-        right: 0;
-        bottom: 0;
-        border-top-left-radius: 5px;
-        border-bottom-right-radius: 12px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
         height: 40px;
         width: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: map-get($colors, 'primary-light');
+        background-image: linear-gradient(45deg, map-get($gradients, 'blue'));
+        transform: translateX(100%);
+        opacity: 0;
+        transition: {
+            property: transform, opacity;
+            duration: 300ms;
+            timing-function: ease;
+        };
     }
 
     &__buttonIcon {

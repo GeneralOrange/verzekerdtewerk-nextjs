@@ -14,17 +14,19 @@ export default function Card({ data, uri }){
             <Link href={`${uri ? uri : ''}/${data.slug}`}>
                 <a>
                     <div className={styles.Card}>
-                        <Image
-                            src="/logo.svg"
-                            alt="Logo"
-                            width="90"
-                            height="90"
-                        />
+                        <div className={styles.Card__image}>
+                            <Image
+                                src="/logo_small_icon_only_inverted.png"
+                                alt="Logo"
+                                width="90"
+                                height="90"
+                            />
+                        </div>
                         <div className={styles.Card__name}>
                             {data.name}
                         </div>
                         <div className={styles.Card__description}>
-                            
+                            {data.description}
                         </div>
 
                         <div className={styles.Card__button}>

@@ -1,4 +1,5 @@
 import Card from './Card'
+import { Container } from 'react-bootstrap'
 import styles from '../../styles/flexcontent/CardSlider.module.scss'
 
 export default function CardSlider({ data, uri }){
@@ -9,14 +10,7 @@ export default function CardSlider({ data, uri }){
     return (
         <>
             <div className={styles.CardSlider}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <strong className={styles.CardSlider__title}>
-                                Misschien kunnen we je helpen met:
-                            </strong>
-                        </div>
-                    </div>
+                <Container>
                     <div className={styles.CardSlider__wrapper}>
                         {data.map((value, index) => (
                             <div key={index} className={styles.CardSlider__item}>
@@ -25,7 +19,7 @@ export default function CardSlider({ data, uri }){
                         ))}
                         
                     </div>
-                </div>
+                </Container>
             </div>
         </>
     )
