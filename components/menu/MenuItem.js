@@ -24,8 +24,6 @@ export default function MenuItem({ component }) {
         link = component.custom_link;
     }
 
-    console.log(component.is_customlink);
-
     return (
         <>
             <Nav.Link href={ link } className={styles.Menu__item}>{ component.name }</Nav.Link>
