@@ -29,7 +29,7 @@ export default function Headings({ data }){
                 { !metaFieldData && !data.flexcontent &&
                     <meta name="description" content={`✅ Verzekerdtewerk ✅| Voor al uw klussen om en in het huis!`} />
                 }
-                { !metaFieldData && data.flexcontent.length > 0 &&
+                { !metaFieldData && data.flexcontent && data.flexcontent.length > 0 &&
                     <meta name="description" content={`✅ Verzekerdtewerk ✅| ${data.flexcontent[0].content}`} />
                 } 
             </Head>
