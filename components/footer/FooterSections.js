@@ -5,11 +5,8 @@ import SingleFooterSection from './SingleFooterSection'
 import styles from '../../styles/footer/Footer.module.scss'
 
 export default function FooterSections({ data }){
-    if(!data){
-        return (
-        <>
-        </>
-        )
+    if(!data.footersection){
+        return null;
     }
     
     const gridSize = Math.ceil(12 / parseInt(data.footersection.length));       

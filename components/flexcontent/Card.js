@@ -6,10 +6,7 @@ import styles from '../../styles/flexcontent/Card.module.scss'
 
 export default function Card({ data, uri }){
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     return (

@@ -1,0 +1,52 @@
+@import '../variables/color';
+
+.Usp {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 0 30px;
+
+    &__iconWrapper {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: red;
+        padding: 10px;
+        border-radius: 6px;
+        margin: 0 0 15px;
+    }
+
+    &__iconWrapperPhone {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'blue'));
+    }
+
+    &__iconWrapperEuro {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'green'));
+    }
+
+    &__iconWrapperBook {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'purple'));
+    }
+
+    &__iconWrapperEye {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'yellow'));
+    }
+
+    &__iconWrapperHammer {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'darkpurple'));
+    }
+
+    &__iconWrapperHandshake {
+        background-image: linear-gradient(to bottom, map-get($gradients, 'brown'));
+    }
+
+    &__icon {
+        color: white;
+        font: {
+            size: 20px;
+        }
+    }
+}

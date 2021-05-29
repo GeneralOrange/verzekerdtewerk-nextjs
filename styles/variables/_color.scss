@@ -2,5 +2,14 @@ $colors: (
     'primary': #005f80,
     'primary-light': #2882a0,
     'secondairy': #d5eafd,
-    'text': #353231
+    'text': #353231,
+);
+
+$gradients: (
+    'blue': (#2882a0, #005f80),
+    'green': (#28a082, #00805F),
+    'purple': (#a02882, #80005f),
+    'yellow': (#82a028, #5f8000),
+    'darkpurple': (#8228a0, #5f0080),
+    'brown': (#a08228, #805f00),
 )

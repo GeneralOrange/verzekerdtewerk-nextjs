@@ -1,12 +1,10 @@
 import Content from './Content'
+import Usp from './Usp'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
 
 export default function FlexContentController({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     let grid = `col-12`;
@@ -31,6 +29,11 @@ function FlexContentDistrubutor({ component }){
                 <Content data={ component }/>
             )
             break;
+        case 'custom.usp':
+            return (
+                <Usp uspData={ component }/>
+            )
+            break;
         case 'custom.mailchimp-form':
             return (
                 <div>
@@ -39,11 +42,7 @@ function FlexContentDistrubutor({ component }){
             )
             break;
         default: 
-            return (
-                <div>
-                    test123
-                </div>
-            )
+            return null;
             break;
     }
 }
