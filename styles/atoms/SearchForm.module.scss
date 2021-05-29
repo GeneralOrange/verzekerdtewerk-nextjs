@@ -29,6 +29,7 @@
     &__button {
         z-index: 0!important;
         background-color: map-get($colors, 'primary');
+        line-height: 1;
         color: white;
         font: {
             weight: 500;
