@@ -37,6 +37,10 @@ h6 {
     timing-function: ease;
   }
 
+  @media screen and (min-width: 992px){
+    transform: unset;
+  }
+
   &.show {
     transform: translate(0,0);
   }
