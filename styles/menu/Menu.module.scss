@@ -6,7 +6,14 @@
 
     a {
         color: white!important;
+    }
 
+    button {
+        border-color: white!important;
+
+        span {
+            filter: invert(1);
+        }
     }
 
 
@@ -19,6 +26,8 @@
             color: black!important;
         }
     }
+
+   
 }
 
 .Menu {
@@ -31,14 +40,44 @@
     }
 
     &__item {
+        color: white!important;
         border-bottom: 3px solid transparent;
+
+        @media screen and (min-width: 992px){
+            color: rgba(0, 0, 0, 0.5)!important;
+        }
+        
 
         &:hover {
             border-bottom: 3px solid map-get($colors, 'primary');
         }
     }
 
-    &__dropdown {
-        background-color: black;
+    &__dropdownItem {
+        color: black!important;
+    }
+
+    &__collapse {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        height: 100vh;
+        padding: 120px 20px 20px;
+        background-color: rgba(0, 95, 128, .9);
+        clip-path: polygon(100% 0%, 0% 0%, 0% 81%, 42% 87%);
+
+        @media screen and (min-width: 992px){
+            position: relative;
+            top: unset;
+            background-color: unset;
+            left: unset;
+            width: unset;
+            height: unset;
+            padding: unset;
+            z-index: 1;
+            clip-path: unset;
+        }
     }
 }

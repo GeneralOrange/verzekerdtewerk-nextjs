@@ -61,7 +61,7 @@ export default function Menu({ data }){
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className={styles.Menu__collapse}>
             <Nav className="mr-auto">
               <MenuComponents components={ data.menu_components } />
             </Nav>

@@ -28,8 +28,16 @@ h6 {
   font-size: 28px;
 }
 
-/* .js-MenuSectionToggle.active {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
-} */
+//Bootstrap overwrites
+.navbar-collapse {
+  transform: translate(-100%, -100%);
+  transition: {
+    property: transform, opacity;
+    duration: 300ms;
+    timing-function: ease;
+  }
+
+  &.show {
+    transform: translate(0,0);
+  }
+}
