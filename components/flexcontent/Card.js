@@ -1,5 +1,6 @@
 import { FaChevronRight } from 'react-icons/fa'
 
+import { getStrapiMedia } from '../../lib/media'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/flexcontent/Card.module.scss'
@@ -9,18 +10,28 @@ export default function Card({ data, uri }){
         return null;
     }
 
+    if(data.thumbnail){
+        var thumbnail = (
+            <img
+                className={styles.Card__thumbnail}
+                alt=""
+                src={getStrapiMedia(data.thumbnail)} />
+        );
+    }
+
     return (
         <>
             <Link href={`${uri ? uri : ''}/${data.slug}`}>
                 <a>
                     <div className={styles.Card}>
                         <div className={styles.Card__image}>
-                            <Image
+                            {!thumbnail && <Image
                                 src="/logo_small_icon_only_inverted.png"
                                 alt="Logo"
                                 width="90"
                                 height="90"
-                            />
+                            />}
+                            {thumbnail}
                         </div>
                         <div className={styles.Card__name}>
                             {data.name}

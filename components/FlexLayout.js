@@ -5,10 +5,7 @@ import Sidebar from './Sidebar'
 
 export default function FlexLayout({ data, sidebar }){
     if(!data && !sidebar){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     if(!sidebar.sidebarBoolean){

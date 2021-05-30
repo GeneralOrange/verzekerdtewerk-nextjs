@@ -6,7 +6,6 @@
     background-color: map-get($colors, 'secondairy');
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 115px 15px 15px;
     margin-bottom: 30px;
     border-radius: 6px;
@@ -27,6 +26,7 @@
 
     &__image {
         position: absolute;
+        overflow: hidden;
         min-height: 100px;
         top: 0;
         left: 0;
@@ -35,6 +35,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    &__thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     &__name {
