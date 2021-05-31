@@ -1,3 +1,4 @@
+import 'lazysizes';
 import { FaChevronRight } from 'react-icons/fa'
 
 import { getStrapiMedia } from '../../lib/media'
@@ -13,9 +14,9 @@ export default function Card({ data, uri }){
     if(data.thumbnail){
         var thumbnail = (
             <img
-                className={styles.Card__thumbnail}
+                className={`${styles.Card__thumbnail} lazyload`}
                 alt=""
-                src={getStrapiMedia(data.thumbnail)} />
+                data-src={getStrapiMedia(data.thumbnail)} />
         );
     }
 
@@ -28,8 +29,8 @@ export default function Card({ data, uri }){
                             {!thumbnail && <Image
                                 src="/logo_small_icon_only_inverted.png"
                                 alt="Logo"
-                                width="90"
-                                height="90"
+                                width="75"
+                                height="75"
                             />}
                             {thumbnail}
                         </div>

@@ -1,3 +1,4 @@
+import { Container, Row, Col } from 'react-bootstrap'
 import Cards from './flexcontent/Cards'
 import Sidebar from './Sidebar'
 
@@ -12,29 +13,29 @@ export default function CardLayout({ data, sidebar, uri }){
     if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
+                <Container>
+                    <Row>
+                        <Col>
                             <Cards data={data} uri={ uri }/>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </>
         )
     }
 
     return (
         <>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 col-lg-8">
+            <Container>
+                <Row>
+                    <Col lg={8}>
                         <Cards data={data} uri={ uri }/>
-                    </div>
-                    <div className="col-12 col-lg-4">
+                    </Col>
+                    <Col lg={4}>
                         <Sidebar data={sidebar.rawSidebarData}/>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }

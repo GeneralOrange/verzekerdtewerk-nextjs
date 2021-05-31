@@ -8,7 +8,8 @@ module.exports = {
         domains: [
                 'localhost',
                 'https://www.verzekerdtewerk.nl/',
-                'https://verzekerdtewerk-strapi.herokuapp.com/'
+                'https://verzekerdtewerk-strapi.herokuapp.com/',
+                'https://res.cloudinary.com/'
             ]
     }
 }

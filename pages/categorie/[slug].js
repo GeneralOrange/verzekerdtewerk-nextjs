@@ -11,11 +11,17 @@ import Footer from '../../components/footer/Footer'
 
 export default function Category({ data }){
 
+    let categoryHeader = evalHeaderBanner({ data });
+
+    if(data.category.header){
+        categoryHeader = data.category.header;
+    }
+
     return (
         <>
             <Headings data={ data.category } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ evalHeaderBanner({ data }) } />
+            <HeaderBanner data={ categoryHeader } />
             <Breadcrumbs data={ data.category } />
             <CardLayout data={ data.category.pages } sidebar={ data.sidebar } />
             <Footer data={data.footer}/>

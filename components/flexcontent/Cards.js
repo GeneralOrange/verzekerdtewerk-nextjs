@@ -1,3 +1,5 @@
+import { Row, Col } from 'react-bootstrap'
+
 import Card from './Card'
 import styles from '../../styles/flexcontent/Cards.module.scss'
 
@@ -9,13 +11,13 @@ export default function Cards({ data, uri }){
     return (
         <>
             <div className={styles.Cards}>
-                <div className="row">
+                <Row>
                     {data.map((value, index) => (
-                        <div key={index} className="col-12 col-lg-4">
+                        <Col key={index} xs={6} xl={4}>
                             <Card data={value} uri={ uri }/>  
-                        </div>
+                        </Col>
                     ))}
-                </div>
+                </Row>
             </div>
         </>
     )

@@ -6,12 +6,18 @@
     background-color: map-get($colors, 'secondairy');
     display: flex;
     flex-direction: column;
-    padding: 115px 15px 15px;
-    margin-bottom: 30px;
+    padding: 90px 15px 15px;
+    margin: 0 -7.5px 15px;
     border-radius: 6px;
-    max-width: 220px;
-    min-width: 220px;
     min-height: 300px;
+
+    @media screen and (min-width: 576px){
+        padding: 115px 15px 15px;
+        max-width: 220px;
+        min-width: 220px;
+        margin: 0 0 30px;
+    }
+    
 
     &:hover {
         box-shadow: 10px 10px 5px -5px lightgrey;
@@ -27,7 +33,7 @@
     &__image {
         position: absolute;
         overflow: hidden;
-        min-height: 100px;
+        min-height: 75px;
         top: 0;
         left: 0;
         width: 100%;
@@ -35,6 +41,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width: 576px){
+            min-height: 100px;
+        }
     }
 
     &__thumbnail {
@@ -48,17 +58,26 @@
 
     &__name {
         align-self: flex-start;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 100%;
+
+        @media screen and (min-width: 576px){
+            font-size: 20px;
+        }
     }
 
     &__description {
+        font-size: 12px;
         max-width: 100%;
         padding: 0 15px 0 0;
+
+        @media screen and (min-width: 576px){
+            font-size: 16px;
+        }
     }
 
     &__button {
