@@ -5,8 +5,6 @@ import HeaderBanner from '../components/HeaderBanner'
 import Menu from '../components/menu/Menu'
 import Breadcrumbs from '../components/Breadcrumbs'
 import FlexLayout from '../components/FlexLayout'
-import { Container, Row, Col } from 'react-bootstrap'
-import CardSlider from '../components/flexcontent/CardSlider'
 import Footer from '../components/footer/Footer'
 
 
@@ -19,16 +17,6 @@ export default function Page({ data })
             <HeaderBanner data={data.page.header} />
             <Breadcrumbs data={data.page} />
             <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
-            <Container>
-                <Row>
-                    <Col sm={12}>
-                        <strong>
-                            Misschien kunnen we je helpen met:
-                        </strong>
-                    </Col>
-                </Row>
-            </Container>
-            <CardSlider data={data.relatedPages} />
             <Footer data={data.footer}/>
         </>
       )
@@ -57,13 +45,13 @@ export async function getStaticProps({ params }) {
     const page = rawPageData[0];
     const pageID = page.id;
 
-    const categories = await fetchAPI(`/categories?pages=${pageID}`);
-    let relatedPages = [];
+    // const categories = await fetchAPI(`/categories?pages=${pageID}`);
+    // let relatedPages = [];
 
-    categories.forEach(category => {
-        category.pages = category.pages.filter(page => page.id !== pageID);
-        relatedPages.push(...category.pages);
-    });
+    // categories.forEach(category => {
+    //     category.pages = category.pages.filter(page => page.id !== pageID);
+    //     relatedPages.push(...category.pages);
+    // });
 
     const menu = await fetchAPI('/menu');
     
@@ -82,7 +70,7 @@ export async function getStaticProps({ params }) {
         menu,
         sidebar,
         footer,
-        relatedPages
+        // relatedPages
     }
 
     return {
