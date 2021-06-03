@@ -30,6 +30,12 @@
         }
     }
 
+    &InSlider {
+        min-width: 180px;
+        max-width: 180px;
+        margin: 0;
+    }
+
     &__image {
         position: absolute;
         overflow: hidden;

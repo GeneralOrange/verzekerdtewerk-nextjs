@@ -14,10 +14,9 @@ export default function CardSlider({ data, uri }){
                     <div className={styles.CardSlider__wrapper}>
                         {data.map((value, index) => (
                             <div key={index} className={styles.CardSlider__item}>
-                                <Card data={value} uri={ uri }/>  
+                                <Card data={value} slider={true}/>  
                             </div>
                         ))}
-                        
                     </div>
                 </Container>
             </div>

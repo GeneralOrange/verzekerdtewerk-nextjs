@@ -6,6 +6,6 @@ export default function MenuComponents({ components }) {
     }
 
     return components.map(component => (
-        <MenuComponentHandler key={component.id} component={component}/>
+        <MenuComponentHandler key={`${component.id}_${component.name}`} component={component}/>
     ));
 }

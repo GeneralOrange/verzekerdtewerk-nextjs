@@ -43,6 +43,7 @@ function FlexContentDistrubutor({ component }){
             }
 
             if(component.pages){
+                component.pages.map(page => page.entity_type = 'page');
                 cards = [
                     ...cards,
                     ...component.pages
@@ -50,6 +51,7 @@ function FlexContentDistrubutor({ component }){
             }
 
             if(component.categories){
+                component.categories.map(category => category.entity_type = 'category');
                 cards = [
                     ...cards,
                     ...component.categories
@@ -57,7 +59,7 @@ function FlexContentDistrubutor({ component }){
             }
 
             return (
-                <CardSlider data={ cards } url={'/'}/>
+                <CardSlider data={ cards }/>
             )
             break;
         case 'custom.mailchimp-form':

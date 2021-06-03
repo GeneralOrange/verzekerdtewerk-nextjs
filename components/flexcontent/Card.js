@@ -6,25 +6,43 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../../styles/flexcontent/Card.module.scss'
 
-export default function Card({ data, uri }){
+export default function Card({ data, uri, slider }){
     if(!data){
         return null;
     }
+
+    let card_slug = `${uri ? uri : ''}/${data.slug}`;
 
     if(data.thumbnail){
         var thumbnail = (
             <img
                 className={`${styles.Card__thumbnail} lazyload`}
                 alt=""
-                data-src={getStrapiMedia(data.thumbnail)} />
+                data-src={getStrapiMedia(data.thumbnail)}
+                height={data.thumbnail.height}
+                width={data.thumbnail.width} />
         );
+    }
+
+    if(data.entity_type){
+        switch(data.entity_type){
+            case 'page':
+                card_slug = `/${data.slug}`;
+                break;
+            case 'category':
+                card_slug = `/categorie/${data.slug}`;
+                break;
+            default:
+                card_slug = `/${data.slug}`;
+                break;
+        }
     }
 
     return (
         <>
-            <Link href={`${uri ? uri : ''}/${data.slug}`}>
+            <Link href={card_slug}>
                 <a>
-                    <div className={styles.Card}>
+                    <div className={ slider ? `${styles.Card} ${styles.CardInSlider}` : styles.Card}>
                         <div className={styles.Card__image}>
                             {!thumbnail && <Image
                                 src="/logo_small_icon_only_inverted.png"

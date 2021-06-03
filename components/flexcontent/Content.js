@@ -3,10 +3,7 @@ import styles from '../../styles/flexcontent/Content.module.scss'
 
 export default function Content({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     return (
