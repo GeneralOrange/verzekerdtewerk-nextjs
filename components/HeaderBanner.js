@@ -1,4 +1,3 @@
-import 'lazysizes';
 import { getStrapiMedia } from '../lib/media'
 
 import { FaHome } from 'react-icons/fa'
@@ -49,7 +48,7 @@ export default function HeaderBanner({ data, homepage }){
                     </div>
                 </div>
                 
-                <img data-src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''} lazyload`} alt=""/>
+                <img src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} alt=""/>
             </div>
         </>
     )    
