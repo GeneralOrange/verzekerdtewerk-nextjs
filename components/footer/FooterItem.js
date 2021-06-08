@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import styles from '../../styles/menu/Menu.module.scss'
 
 export default function FooterItem({ component }) {
     if(!component || !component.page && !component.is_category && !component.is_customlink){
