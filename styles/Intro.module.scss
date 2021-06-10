@@ -1,0 +1,11 @@
+@import './variables/color';
+
+.Intro {
+    padding: 50px 0 25px;
+    border-bottom: 1px solid lightgrey;
+
+    font: {
+        weight: 500;
+        size: 16px;
+    }
+}

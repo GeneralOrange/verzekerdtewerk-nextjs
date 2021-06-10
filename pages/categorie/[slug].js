@@ -23,7 +23,7 @@ export default function Category({ data }){
             <Menu data={ data.menu }/>
             <HeaderBanner data={ categoryHeader } />
             <Breadcrumbs data={ data.category } />
-            <CardLayout data={ data.category.pages } sidebar={ data.sidebar } />
+            <CardLayout data={ data.category } sidebar={ data.sidebar } />
             <Footer data={data.footer}/>
         </>
       )
