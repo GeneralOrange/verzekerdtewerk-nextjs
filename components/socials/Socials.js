@@ -1,7 +1,7 @@
 import Social from './Social'
 
 export default function Socials({ socialItems }) {
-    if(socialItems.length < 1){
+    if(!socialItems || socialItems.length < 1){
         return null;
     }
 

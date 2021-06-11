@@ -5,7 +5,7 @@ import FooterSection from './FooterSection'
 import styles from '../../styles/footer/Footer.module.scss'
 
 export default function FooterSections({ data }){
-    if(!data.footersection){
+    if(!data || !data.footersection){
         return null;
     }
     
@@ -16,7 +16,7 @@ export default function FooterSections({ data }){
             { data.footersection.map((data, key) => (
                 <Col key={key} md={6} lg={gridSize} className={styles.FooterItem}>
                     <div className={styles.FooterItem__name}>
-                    {data.name}
+                        {data.name}
                     </div>
                     <FooterSection data={data}/>
                 </Col>

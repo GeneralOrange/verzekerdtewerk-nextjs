@@ -1,12 +1,9 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
-import FooterSections from './FooterSections'
-
 import Link from 'next/link'
 import Image from 'next/image'
+import FooterSections from './FooterSections'
 import styles from '../../styles/footer/Footer.module.scss'
-
-
 
 export default function Footer({ data }){
     if(!data){
