@@ -10,10 +10,7 @@ import Footer from '../../components/footer/Footer'
 
 export default function CategoryCollection({ data }) {
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     const breadcrumbData = {
@@ -26,7 +23,7 @@ export default function CategoryCollection({ data }) {
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } />
-            <CardLayout data={ data.categories } sidebar={ false } uri={ '/categorie' }/>
+            <CardLayout data={ data } sidebar={ false } uri={ '/categorie' }/>
             <Footer data={data.footer}/>
         </>
     )

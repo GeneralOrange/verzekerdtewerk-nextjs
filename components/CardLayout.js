@@ -8,6 +8,22 @@ export default function CardLayout({ data, sidebar, uri }){
         return null;
     }
 
+    let cards = [];
+
+    if(data.categories){
+        cards = [
+            ...cards,
+            ...data.categories
+        ];
+    }
+
+    if(data.pages){
+        cards = [
+            ...cards,
+            ...data.pages
+        ];
+    }
+
     if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>
@@ -15,7 +31,7 @@ export default function CardLayout({ data, sidebar, uri }){
                     <Row>
                         <Col>
                             <Intro content={ data.intro }/>
-                            <Cards data={ data.pages } uri={ uri }/>
+                            <Cards data={ cards } uri={ uri }/>
                         </Col>
                     </Row>
                 </Container>
@@ -29,7 +45,7 @@ export default function CardLayout({ data, sidebar, uri }){
                 <Row>
                     <Col lg={8}>
                         <Intro content={ data.intro }/>
-                        <Cards data={ data.pages } uri={ uri }/>
+                        <Cards data={ cards } uri={ uri }/>
                     </Col>
                     <Col lg={4}>
                         <Sidebar data={ sidebar.rawSidebarData }/>
