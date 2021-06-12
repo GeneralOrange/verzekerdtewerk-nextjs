@@ -1,0 +1,63 @@
+@import '../variables/color';
+
+.AccordionComponent {
+    position: relative;
+    display: flex;
+    margin: 0 0 30px;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        min-width: 250px;
+        padding: 25px;
+        min-height: 75px;
+        flex-direction: column;
+        margin: 0 0 15px;
+        border: 0;
+        background:  transparent;
+        cursor: pointer;
+        border-radius: 6px!important;
+        border: 0;
+        color: map-get($colors, 'text');
+        transition: {
+            property: background-image;
+            duration: 300ms;
+            timing-function: ease;
+        }
+        
+        &:hover {
+            box-shadow: 10px 10px 5px -5px map-get($colors, 'text');
+        }
+    }
+
+    &__headerTitle {
+        font: {
+            size: 20px;
+            weight: 500;
+        }
+        margin: 0 0 5px;
+    }
+
+    &__headerSubTitle {
+        font: {
+            size: 12px;
+            weight: 400;
+        }
+    }
+
+    &__toggleList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100%;
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__bodyInner {
+       display: block;
+    }
+}

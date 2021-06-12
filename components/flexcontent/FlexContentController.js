@@ -1,6 +1,7 @@
 import Content from './Content'
 import Usp from './Usp'
-import CardSlider from '../flexcontent/CardSlider'
+import AccordionComponent from './AccordionComponent'
+import CardSlider from './CardSlider'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
 
 export default function FlexContentController({ data }){
@@ -64,6 +65,11 @@ function FlexContentDistrubutor({ component }){
             break;
         case 'custom.mailchimp-form':
             return null;
+            break;
+        case 'custom.accordion':
+            return (
+                <AccordionComponent data={ component }/>
+            )
             break;
         default: 
             return null;
