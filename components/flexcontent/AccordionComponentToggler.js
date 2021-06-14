@@ -20,12 +20,41 @@ export default function AccordionComponentToggler({ data, eventKey }){
         ]
     }
 
+    const handleClick = (e) => {
+        e.preventDefault();
+
+        let clickTarget = e.target;
+
+        while(!clickTarget.classList.contains('card-header')){
+            clickTarget = clickTarget.parentElement;
+        }
+
+        const targetId = parseInt(clickTarget.id);
+
+        if(active == targetId){
+            setActive(false);
+        }
+
+        if(active != targetId){
+            setActive(targetId);
+        }
+
+        if(active != targetId && eventKey == targetId){
+            setActive(false);
+        }
+
+        if(active === false){
+            setActive(targetId);
+        }
+    }
+
     return (
         <Accordion.Toggle
             as={Card.Header}
             eventKey={ eventKey }
-            className={classNames}
-            onClick={()=>{}}>
+            id={ eventKey }
+            className={ classNames }
+            onClick={(e)=> handleClick(e)}>
                 <div className={ styles.AccordionComponent__headerTitle }>{ data.title }</div>
                 <div className={ styles.AccordionComponent__headerSubTitle }>{ data.subtitle }</div>
         </Accordion.Toggle>    
