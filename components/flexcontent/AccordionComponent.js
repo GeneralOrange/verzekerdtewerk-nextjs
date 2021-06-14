@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Container, Row, Col, Accordion } from 'react-bootstrap'
 import AccordionComponentItem from './AccordionComponentItem'
 import AccordionComponentTogglers from './AccordionComponentTogglers'
@@ -9,14 +8,12 @@ export default function AccordionComponent({ data }){
         return null;
     }
 
-    const [activeKey, setActivekey] = useState(1);
-
     return (
         <>
             <Container>
                 <Row>
                     <Col>
-                        <Accordion className={ styles.AccordionComponent } defaultActiveKey={activeKey}>
+                        <Accordion className={ styles.AccordionComponent } defaultActiveKey={1}>
                             <AccordionComponentTogglers data={ data }/>
                             {data.accordion_items.map((accordionItem, key) => (
                                 <AccordionComponentItem key={key} eventKey={key + 1} data={accordionItem} />

@@ -7,10 +7,7 @@ import styles from '../styles/Breadcrumbs.module.scss';
 
 export default function Breadcrumbs({ data }){
     if(!data){
-        return (
-            <>
-            </>
-        )
+        return null;
     }
 
     const pageType = evalPageType({ data });

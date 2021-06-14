@@ -30,6 +30,11 @@
         }
     }
 
+    &__headerActive {
+        background-image: linear-gradient(map-get($gradients, 'purple'));
+        color: white;
+    }
+
     &__headerTitle {
         font: {
             size: 20px;
