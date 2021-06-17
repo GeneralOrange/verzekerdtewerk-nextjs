@@ -8,8 +8,11 @@ import FlexLayout from '../components/FlexLayout'
 import Footer from '../components/footer/Footer'
 
 
-export default function Page({ data })
-{
+export default function Page({ data }){
+    if(!data){
+        return null;
+    }
+    
     return (
         <>
             <Headings data={data.page} />
@@ -43,7 +46,7 @@ export async function getStaticProps({ params }) {
 
     const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
     const page = rawPageData[0];
-    const pageID = page.id;
+    //const pageID = page.id;
 
     // const categories = await fetchAPI(`/categories?pages=${pageID}`);
     // let relatedPages = [];
