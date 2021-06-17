@@ -3,7 +3,12 @@
 .AccordionComponent {
     position: relative;
     display: flex;
+    flex-direction: column;
     margin: 0 0 30px;
+
+    @media screen and (min-width: 992px){
+        flex-direction: row;
+    }
 
     &__header {
         display: flex;
@@ -23,10 +28,6 @@
             property: background-image;
             duration: 300ms;
             timing-function: ease;
-        }
-        
-        &:hover {
-            box-shadow: 10px 10px 5px -5px map-get($colors, 'text');
         }
     }
 

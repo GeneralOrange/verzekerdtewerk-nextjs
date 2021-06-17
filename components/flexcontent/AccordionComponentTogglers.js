@@ -1,7 +1,7 @@
 import AccordionComponentToggler from './AccordionComponentToggler';
 import styles from '../../styles/flexcontent/AccordionComponent.module.scss'
 
-export default function AccordionComponentTogglers({ data }){
+export default function AccordionComponentTogglers({ data, activeKey }){
     if(!data){
         return null;
     }
@@ -12,7 +12,8 @@ export default function AccordionComponentTogglers({ data }){
                 <AccordionComponentToggler
                     data={accordion_item}
                     key={key}
-                    eventKey={key + 1}/>
+                    eventKey={key + 1}
+                    activeKey={activeKey}/>
             ))}
         </div>
     );
