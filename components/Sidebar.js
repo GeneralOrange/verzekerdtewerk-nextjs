@@ -18,7 +18,7 @@ export default function Sidebar({ data }){
         <>
             <SearchForm/>
             <div className={styles.Sidebar}>
-                <h3 className={styles.Sidebar__title}>Bekijk 1 van onze andere categorieën</h3>
+                <h3 className={styles.Sidebar__title}>Onze acties in en om het huis!</h3>
                 {CategoryList({ categories })}
                 {CTA({ ctaData })}
             </div>

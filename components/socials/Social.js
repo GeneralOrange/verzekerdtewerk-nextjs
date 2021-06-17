@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaSnapchatSquare } from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagramSquare, FaLinkedin, FaSnapchatSquare, FaTwitter, FaYoutube } from 'react-icons/fa'
 import styles from '../../styles/socials/Social.module.scss' 
 
 export default function Social({ socialItem }){
-    if(!socialItem){
+    if(!socialItem || !socialItem.link || !socialItem.icon || !socialItem.title){
         return null;
     }
 
@@ -37,6 +37,12 @@ function handleSocialIcons(socialIcon){
             break;
         case 'Snapchat':
             return <FaSnapchatSquare className={styles.Social__icon}/>
+            break;
+        case 'Twitter':
+            return <FaTwitter className={styles.Social__icon}/>
+            break; 
+        case 'Youtube':
+            return <FaYoutube className={styles.Social__icon}/>
             break;    
         default:
             //
