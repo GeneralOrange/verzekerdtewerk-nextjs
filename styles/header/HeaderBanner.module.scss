@@ -64,18 +64,6 @@
             clip-path: polygon(55% 0%, 0% 100%, 100% 100%, 100% 0%);
         }
     
-        // &:after {
-        //     content: '';
-        //     opacity: 1;
-        //     position: absolute;
-        //     top: 0;
-        //     right: 0;
-        //     height: 100%;
-        //     width: 50%;
-        //     background-image: linear-gradient(45deg, map-get($gradients, 'green'));
-        //     clip-path: polygon(54% 0%, 0% 100%, 1% 100%, 55% 0%);
-        // }
-    
         &__icon {
             display: block;
             position: absolute;
