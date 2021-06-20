@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
 import FlexContentController from './flexcontent/FlexContentController'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar/Sidebar'
 
 export default function FlexLayout({ data, sidebar }){
     if(!data && !sidebar){
