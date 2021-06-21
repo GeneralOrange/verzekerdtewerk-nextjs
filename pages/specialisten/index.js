@@ -8,13 +8,15 @@ import Breadcrumbs from '../../components/Breadcrumbs'
 import CardLayout from '../../components/CardLayout'
 import Footer from '../../components/footer/Footer'
 
-export default function CategoryCollection({ data }) {
+export default function SpecialistCollection({ data }) {
     if(!data){
         return null;
     }
 
     const breadcrumbData = {
-        name : 'Categorie'
+        data: {
+            name : 'Specialisten'
+        }
     }
 
     return (
@@ -22,8 +24,8 @@ export default function CategoryCollection({ data }) {
             <Headings data={ evalHeadings({ data }) } />
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
-            <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'category' } />
-            <CardLayout data={ data } sidebar={ false } uri={ '/categorie' }/>
+            <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
+            <CardLayout data={ data } sidebar={ false } uri={ '/specialisten' }/>
             <Footer data={data.footer}/>
         </>
     )
@@ -35,17 +37,17 @@ const evalHeaderBanner = ({ data }) => {
     }
 
     return {
-        content : `<h1>Categorieën</h1>`
+        content : `<h1>Specialisten</h1>`
     }
 }
 
 export async function getStaticProps() {
-    const categories = await fetchAPI('/categories');
+    const specialists = await fetchAPI('/specialists');
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 
     const data = {
-        categories,
+        specialists,
         menu,
         footer
     }

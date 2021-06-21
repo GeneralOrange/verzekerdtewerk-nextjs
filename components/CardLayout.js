@@ -24,6 +24,13 @@ export default function CardLayout({ data, sidebar, uri }){
         ];
     }
 
+    if(data.specialists){
+        cards = [
+            ...cards,
+            ...data.specialists
+        ]
+    }
+
     if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>

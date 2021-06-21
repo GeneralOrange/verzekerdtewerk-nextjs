@@ -18,7 +18,7 @@ export default function Page({ data }){
             <Headings data={data.page} />
             <Menu data={ data.menu }/>
             <HeaderBanner data={data.page.header} />
-            <Breadcrumbs data={data.page} />
+            <Breadcrumbs data={data.page} pageType={'page'} />
             <FlexLayout data={data.page.flexcontent} sidebar={data.sidebar} />
             <Footer data={data.footer}/>
         </>
