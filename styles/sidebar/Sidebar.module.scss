@@ -9,6 +9,7 @@
     background-color: map-get($colors, 'secondairy');
 
     &__title {
+        display: inline-block;
         font-size: 24px;
         font-weight: bold;
         color: map-get($colors, 'primary-light');
