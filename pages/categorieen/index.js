@@ -14,7 +14,8 @@ export default function CategoryCollection({ data }) {
     }
 
     const breadcrumbData = {
-        name : 'Categorie'
+        name: 'Categorieën',
+        slug: 'categorieen'
     }
 
     return (
@@ -23,7 +24,7 @@ export default function CategoryCollection({ data }) {
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'category' } />
-            <CardLayout data={ data } sidebar={ false } uri={ '/categorie' }/>
+            <CardLayout data={ data } sidebar={ false } uri={ '/categorieen' }/>
             <Footer data={data.footer}/>
         </>
     )

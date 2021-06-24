@@ -1,5 +1,3 @@
-import { evalPageType } from '../lib/defaultData';
-
 import Link from 'next/link';
 import { FaHome, FaChevronRight } from 'react-icons/fa';
 
@@ -10,34 +8,34 @@ export default function Breadcrumbs({ data, pageType }){
         return null;
     }
 
-    //const pageType = evalPageType({ data });
-
-    const richSnippet = {
-        "@context" : "http://schema.org",
-        "@type" : "BreadcrumbList",
-        "itemListElement" :
-            [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "item":
-                        {
-                            "@id": `test`,
-                            "name": `${data.name}`
-                            
-                        }
-                }
-            ]
-    };
-
-
     switch(pageType){
         case 'page':
+
+            const richSnippetPages = {
+                "@context" : "http://schema.org",
+                "@type" : "BreadcrumbList",
+                "itemListElement" :
+                    [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/${data.slug}/`,
+                                    "name": `${data.name}`
+                                }
+                        }
+                    ]
+            };
+
             return (
                 <>
-                    {/* <script type="application/ld+json">
-                        { JSON.stringify(richSnippet)}
-                    </script> */}
+                   <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(richSnippetPages)
+                        }}>
+                    </script>
                     <div className={styles.Breadcrumbs}>
                         <div className="container">
                             <div className="row">
@@ -65,11 +63,41 @@ export default function Breadcrumbs({ data, pageType }){
             )
             break;
         case 'category':
+
+            const richSnippetCategory = {
+                "@context" : "http://schema.org",
+                "@type" : "BreadcrumbList",
+                "itemListElement" :
+                    [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/categorieen/`,
+                                    "name": `Categorieën`
+                                }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/categorieen/${data.slug}/`,
+                                    "name": `${data.name}`
+                                }
+                        }
+                    ]
+            };
+
             return (
                 <>
-                    {/* <script type="application/ld+json">
-                        { JSON.stringify(richSnippet)}
-                    </script> */}
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(richSnippetCategory)
+                        }}>
+                    </script>
                     <div className={styles.Breadcrumbs}>
                         <div className="container">
                             <div className="row">
@@ -107,11 +135,40 @@ export default function Breadcrumbs({ data, pageType }){
             )
             break;
         case 'specialist':
+            const richSnippetSpecialist = {
+                "@context" : "http://schema.org",
+                "@type" : "BreadcrumbList",
+                "itemListElement" :
+                    [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/specialisten/`,
+                                    "name": `Specialisten`
+                                }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/specialisten/${data.slug}/`,
+                                    "name": `${data.name}`
+                                }
+                        }
+                    ]
+            };
+
             return (
                 <>
-                    {/* <script type="application/ld+json">
-                        { JSON.stringify(richSnippet)}
-                    </script> */}
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(richSnippetSpecialist)
+                        }}>
+                    </script>
                     <div className={styles.Breadcrumbs}>
                         <div className="container">
                             <div className="row">
@@ -151,9 +208,6 @@ export default function Breadcrumbs({ data, pageType }){
         default:
             return (
                 <>
-                    {/* <script type="application/ld+json">
-                        { JSON.stringify(richSnippet)}
-                    </script> */}
                     <div className={styles.Breadcrumbs}>
                         <div className="container">
                             <div className="row">

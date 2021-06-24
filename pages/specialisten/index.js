@@ -15,7 +15,8 @@ export default function SpecialistCollection({ data }) {
 
     const breadcrumbData = {
         data: {
-            name : 'Specialisten'
+            name: 'Specialisten',
+            slug: 'specialisten'
         }
     }
 
