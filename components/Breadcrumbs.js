@@ -114,9 +114,9 @@ export default function Breadcrumbs({ data, pageType }){
                                             <FaChevronRight />
                                         </li>
                                         <li className={styles.Breadcrumbs__item}>
-                                            <Link href="/categorie/">
+                                            <Link href="/categorieen/">
                                                 <a>
-                                                    Categorie
+                                                    Categorieën
                                                 </a>
                                             </Link>
                                         </li>

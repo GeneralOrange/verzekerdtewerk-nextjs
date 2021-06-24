@@ -23,7 +23,7 @@ export default function CategoryCollection({ data }) {
             <Headings data={ evalHeadings({ data }) } />
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
-            <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'category' } />
+            <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
             <CardLayout data={ data } sidebar={ false } uri={ '/categorieen' }/>
             <Footer data={data.footer}/>
         </>
