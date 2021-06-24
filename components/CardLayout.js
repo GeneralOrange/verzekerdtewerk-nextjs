@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import Intro from './Intro'
 import Cards from './flexcontent/Cards'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar/Sidebar'
 
 export default function CardLayout({ data, sidebar, uri }){
     if(!data && !sidebar){
@@ -22,6 +22,13 @@ export default function CardLayout({ data, sidebar, uri }){
             ...cards,
             ...data.pages
         ];
+    }
+
+    if(data.specialists){
+        cards = [
+            ...cards,
+            ...data.specialists
+        ]
     }
 
     if(!sidebar || !sidebar.sidebarBoolean){

@@ -30,7 +30,7 @@ export default function Card({ data, uri, slider }){
                 card_slug = `/${data.slug}`;
                 break;
             case 'category':
-                card_slug = `/categorie/${data.slug}`;
+                card_slug = `/categorieen/${data.slug}`;
                 break;
             default:
                 card_slug = `/${data.slug}`;

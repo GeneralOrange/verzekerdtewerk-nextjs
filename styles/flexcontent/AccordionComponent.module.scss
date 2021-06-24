@@ -11,9 +11,11 @@
     }
 
     &__header {
+        position: relative;
         display: flex;
         justify-content: center;
         min-width: 250px;
+        max-width: 250px;
         padding: 25px;
         min-height: 75px;
         flex-direction: column;
@@ -29,10 +31,37 @@
             duration: 300ms;
             timing-function: ease;
         }
+
+        &:before {
+            position: absolute;
+            content: '1';
+            left: -5px;
+            top: -5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(45deg, map-get($gradients, 'blue'));
+            height: 30px;
+            width: 30px;
+            border-radius: 6px;
+            font: {
+                size: 20px;
+                weight: 800;
+            }
+            color: white;
+        }
+
+        @for $i from 2 through 10 {
+            &:nth-child(#{$i}){
+                &:before {
+                    content: '#{$i}';
+                }
+            }
+        }
     }
 
     &__headerActive {
-        background-image: linear-gradient(map-get($gradients, 'purple'));
+        background-image: linear-gradient(-45deg, map-get($gradients, 'neon'));
         color: white;
     }
 
@@ -61,6 +90,41 @@
 
     &__body {
         position: relative;
+        font: {
+            size: 15px;
+        }
+    }
+
+    &__step {
+        display: inline-flex;
+        align-items: center;
+        padding: 7.5px 15px;
+        margin-bottom: 15px;
+        justify-content: center;
+        background-image: linear-gradient(45deg, map-get($gradients, 'blue'));
+        white-space: nowrap;
+        border-radius: 6px;
+        font: {
+            size: 20px;
+            weight: 800;
+        }
+        color: white;
+    }
+
+    &__icon {
+        display: none;
+        position: absolute;
+        right: -40px;
+        top: -40px;
+        opacity: .1;
+        color: map-get($colors, 'primary-light');
+        font: {
+            size: 400px;
+        }
+
+        @media screen and (min-width: 992px){
+            display: block;
+        }
     }
 
     &__bodyInner {
