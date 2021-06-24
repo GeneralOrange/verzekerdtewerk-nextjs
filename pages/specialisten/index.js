@@ -26,7 +26,7 @@ export default function SpecialistCollection({ data }) {
             <Menu data={ data.menu }/>
             <HeaderBanner data={ evalHeaderBanner({ data }) }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
-            <CardLayout data={ data } sidebar={ false } uri={ '/specialisten' }/>
+            <CardLayout data={ data } sidebar={ data.sidebar } uri={ '/specialisten' }/>
             <Footer data={data.footer}/>
         </>
     )
@@ -47,10 +47,19 @@ export async function getStaticProps() {
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 
+    const rawSidebarData = await fetchAPI('/sidebar');
+    const sidebarBoolean = true;
+
+    const sidebar = {
+        rawSidebarData,
+        sidebarBoolean,
+    }
+
     const data = {
         specialists,
         menu,
-        footer
+        footer,
+        sidebar
     }
 
     return {
