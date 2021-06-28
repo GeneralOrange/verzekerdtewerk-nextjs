@@ -10,7 +10,7 @@ export default function SidebarCategories({ categories }){
         <ul className={styles.Sidebar__categoryList}>
             {categories.map((category, index) => (
                 <li key={index} className={styles.Sidebar__categoryItem}>
-                    <Link href={`/categorie/${category.slug}`}>
+                    <Link href={`/categorieen/${category.slug}`}>
                         <a>      
                             {category.name}  
                         </a>
