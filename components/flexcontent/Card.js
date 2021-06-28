@@ -11,7 +11,9 @@ export default function Card({ data, uri, slider }){
         return null;
     }
 
-    let card_slug = `${uri ? uri : ''}/${data.slug}`;
+    console.log(data);
+
+    let card_slug = `${uri ? uri : ''}/${data.slug}/`;
 
     if(data.thumbnail){
         var thumbnail = (
@@ -27,10 +29,23 @@ export default function Card({ data, uri, slider }){
     if(data.entity_type){
         switch(data.entity_type){
             case 'page':
-                card_slug = `/${data.slug}`;
+                card_slug = `/${data.slug}/`;
                 break;
             case 'category':
-                card_slug = `/categorieen/${data.slug}`;
+                card_slug = `/categorieen/${data.slug}/`;
+                break;
+            case 'specialist':
+                card_slug = `/specialisten/${data.slug}/`;
+                break;
+            case 'job':
+                card_slug = `/werkzaamheden/${data.slug}/`;
+                break;
+            case 'cost':
+                if(data.specialist){
+                    card_slug = `/specialisten/${data.specialist.slug}/kosten/`;
+                } else if(data.job){
+                    card_slug = `/werkzaamheden/${data.job.slug}/kosten/`;
+                }
                 break;
             default:
                 card_slug = `/${data.slug}`;

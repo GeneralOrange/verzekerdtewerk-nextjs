@@ -9,13 +9,12 @@
     padding: 90px 15px 15px;
     margin: 0 -7.5px 15px;
     border-radius: 6px;
-    min-height: 300px;
+    min-height: 250px;
 
     @media screen and (min-width: 576px){
-        padding: 115px 15px 15px;
-        max-width: 220px;
-        min-width: 220px;
-        margin: 0 0 30px;
+        max-width: 160px;
+        min-width: 160px;
+        margin: 0 -7.5px 30px;
     }
     
 
@@ -31,14 +30,7 @@
     }
 
     &InSlider {
-        max-width: 180px;
-        min-width: 180px;
         margin: 0;
-
-        @media screen and (min-width: 576px){
-            max-width: 220px;
-            min-width: 220px;
-        }
     }
 
     &__image {
@@ -52,10 +44,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @media screen and (min-width: 576px){
-            min-height: 100px;
-        }
     }
 
     &__thumbnail {
@@ -75,29 +63,21 @@
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 100%;
-
-        @media screen and (min-width: 576px){
-            font-size: 20px;
-        }
     }
 
     &__description {
         font-size: 12px;
         max-width: 100%;
         padding: 0 15px 0 0;
-
-        @media screen and (min-width: 576px){
-            font-size: 16px;
-        }
     }
 
     &__button {
         position: absolute;
-        right: 15px;
-        bottom: 15px;
+        right: 10px;
+        bottom: 10px;
         border-radius: 50%;
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         display: flex;
         align-items: center;
         justify-content: center;

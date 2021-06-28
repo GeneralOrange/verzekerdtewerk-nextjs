@@ -13,7 +13,7 @@ export default function Cards({ data, uri }){
             <div className={styles.Cards}>
                 <Row>
                     {data.map((value, index) => (
-                        <Col key={index} xs={6} xl={4}>
+                        <Col key={index} xs={6} xl={3}>
                             <Card data={value} uri={ uri }/>  
                         </Col>
                     ))}

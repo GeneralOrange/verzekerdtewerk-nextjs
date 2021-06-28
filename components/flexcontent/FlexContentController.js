@@ -39,7 +39,7 @@ function FlexContentDistrubutor({ component }){
         case 'custom.cards':
             let cards = [];
 
-            if(!component.pages && !component.categories){
+            if(!component.pages && !component.categories && !component.jobs && !component.specialists && !component.costs){
                 return null;
             }
 
@@ -57,6 +57,30 @@ function FlexContentDistrubutor({ component }){
                     ...cards,
                     ...component.categories
                 ];
+            }
+
+            if(component.jobs){
+                component.jobs.map(job => job.entity_type = 'job');
+                cards = [
+                    ...cards,
+                    ...component.jobs
+                ];
+            }
+
+            if(component.specialists){
+                component.specialists.map(specialist => specialist.entity_type = 'specialist');
+                cards = [
+                    ...cards,
+                    ...component.specialists
+                ];
+            }
+
+            if(component.costs){
+                component.costs.map(cost => cost.entity_type = 'cost');
+                cards = [
+                    ...cards,
+                    ...component.costs
+                ]
             }
 
             return (
