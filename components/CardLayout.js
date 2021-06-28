@@ -31,6 +31,20 @@ export default function CardLayout({ data, sidebar, uri }){
         ]
     }
 
+    if(data.jobs){
+        cards = [
+            ...cards,
+            ...data.jobs
+        ]
+    }
+
+    if(data.costs){
+        cards = [
+            ...cards,
+            ...data.costs
+        ]
+    }
+
     if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>

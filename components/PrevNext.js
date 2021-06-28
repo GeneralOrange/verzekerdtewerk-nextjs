@@ -37,16 +37,24 @@ export default function PrevNext({ data, pageType }){
                 </Container>
             )
             break;
-        case 'cost':
+        case 'job':
             return (
                 <Container>
                     <Row>
                         <Col>
                             <div className={ styles.PrevNext }>
                                 <div className={ styles.PrevNext__prev }>
-                                    <Link href={`/specialisten/${data.specialist.slug}/`}>
+                                    <Link href="/werkzaamheden/">
                                         <a>
-                                            <FaChevronLeft/> Terug naar Specialist
+                                            <FaChevronLeft/> Terug naar werkzaamheden
+                                        </a>
+                                    </Link>
+                                </div>
+        
+                                <div className={ styles.PrevNext__next }>
+                                    <Link href={`/werkzaamheden/${data.slug}/kosten/`}>
+                                        <a>
+                                            Door naar kosten <FaChevronRight/>
                                         </a>
                                     </Link>
                                 </div>
@@ -55,6 +63,48 @@ export default function PrevNext({ data, pageType }){
                     </Row>
                 </Container>
             )
+            break;
+        case 'cost':
+            if(data.specialist){
+                return (
+                    <Container>
+                        <Row>
+                            <Col>
+                                <div className={ styles.PrevNext }>
+                                    <div className={ styles.PrevNext__prev }>
+                                        <Link href={`/specialisten/${data.specialist.slug}/`}>
+                                            <a>
+                                                <FaChevronLeft/> Terug naar Specialist
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                )
+            } else if(data.job){
+                return (
+                    <Container>
+                        <Row>
+                            <Col>
+                                <div className={ styles.PrevNext }>
+                                    <div className={ styles.PrevNext__prev }>
+                                        <Link href={`/werkzaamheden/${data.job.slug}/`}>
+                                            <a>
+                                                <FaChevronLeft/> Terug naar werkzaamheid
+                                            </a>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                )
+            }
+
+            return null;
+            
             break;
         default:
             //
