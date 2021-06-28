@@ -1,6 +1,6 @@
 import { fetchAPI } from '../../lib/api'
 
-import { evalHeadings, evalBreadcrumbs } from '../../lib/defaultData'
+import { evalBreadcrumbs } from '../../lib/defaultData'
 import Headings from '../../processing/metaData/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
@@ -20,9 +20,9 @@ export default function CategoryCollection({ data }) {
 
     return (
         <>
-            <Headings data={ evalHeadings({ data }) } />
+            <Headings data={ data.categoriesOverview } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ evalHeaderBanner({ data }) }/>
+            <HeaderBanner data={ data.categoriesOverview.header }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
             <CardLayout data={ data } sidebar={ false } uri={ '/categorieen' }/>
             <Footer data={data.footer}/>
@@ -30,22 +30,14 @@ export default function CategoryCollection({ data }) {
     )
 }
 
-const evalHeaderBanner = ({ data }) => {
-    if(!data){
-        return;
-    }
-
-    return {
-        content : `<h1>Categorieën</h1>`
-    }
-}
-
 export async function getStaticProps() {
+    const categoriesOverview = await fetchAPI('/categories-overview');
     const categories = await fetchAPI('/categories');
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 
     const data = {
+        categoriesOverview,
         categories,
         menu,
         footer
