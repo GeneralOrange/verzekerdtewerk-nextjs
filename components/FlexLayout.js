@@ -1,5 +1,6 @@
 import { Container, Row, Col } from 'react-bootstrap'
 
+import PrevNext from './PrevNext'
 import FlexContentController from './flexcontent/FlexContentController'
 import Sidebar from './sidebar/Sidebar'
 

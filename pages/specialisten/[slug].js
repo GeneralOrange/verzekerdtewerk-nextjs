@@ -4,6 +4,7 @@ import Headings from '../../processing/metaData/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
 import Breadcrumbs from '../../components/Breadcrumbs'
+import PrevNext from '../../components/PrevNext'
 import FlexLayout from '../../components/FlexLayout'
 import Footer from '../../components/footer/Footer'
 
@@ -19,6 +20,7 @@ export default function Specialist({ data }){
             <Menu data={ data.menu }/>
             <HeaderBanner data={data.specialist.header} />
             <Breadcrumbs data={data.specialist} pageType={ 'specialist' }/>
+            <PrevNext data={data.specialist} pageType={ 'specialist' }/>
             <FlexLayout data={data.specialist.flexcontent} sidebar={data.sidebar} />
             <Footer data={data.footer}/>
         </>

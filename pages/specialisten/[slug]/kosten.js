@@ -4,6 +4,7 @@ import Headings from '../../../processing/metaData/Headings'
 import HeaderBanner from '../../../components/HeaderBanner'
 import Menu from '../../../components/menu/Menu'
 import Breadcrumbs from '../../../components/Breadcrumbs'
+import PrevNext from '../../../components/PrevNext'
 import FlexLayout from '../../../components/FlexLayout'
 import Footer from '../../../components/footer/Footer'
 
@@ -19,6 +20,7 @@ export default function SpecialistCosts({ data }){
             <Menu data={ data.menu }/>
             <HeaderBanner data={data.cost.header} />
             <Breadcrumbs data={data.cost} pageType={ 'cost' }/>
+            <PrevNext data={data.cost} pageType={ 'cost' }/>
             <FlexLayout data={data.cost.flexcontent} sidebar={data.sidebar} />
             <Footer data={data.footer}/>
         </>

@@ -1,0 +1,31 @@
+@import './variables/color';
+
+.PrevNext {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 0;
+
+    &__prev,
+    &__next {
+        display: inline-flex;
+        align-items: center;
+        padding: 7.5px 15px;
+        margin: 15px 0;
+        justify-content: center;
+        background-image: linear-gradient(45deg, map-get($gradients, 'blue'));
+        white-space: nowrap;
+        border-radius: 6px;
+        font: {
+            size: 14px;
+            weight: 800;
+        }
+        color: white;
+
+        &:hover {
+            a {
+                color: white;
+            }
+        }
+    }
+}
