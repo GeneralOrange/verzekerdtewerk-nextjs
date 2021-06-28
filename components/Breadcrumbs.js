@@ -205,6 +205,96 @@ export default function Breadcrumbs({ data, pageType }){
                 </>
             )
             break;
+        case 'cost':
+            const richSnippetSpecialistCost = {
+                "@context" : "http://schema.org",
+                "@type" : "BreadcrumbList",
+                "itemListElement" :
+                    [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/specialisten/`,
+                                    "name": `Specialisten`
+                                }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/specialisten/${data.specialist.slug}/`,
+                                    "name": `${data.specialist.name}`
+                                }
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "item":
+                                {
+                                    "@id": `${process.env.NEXT_PUBLIC_SITE_URL}/specialisten/${data.specialist.slug}/kosten/`,
+                                    "name": `${data.specialist.name} kosten`
+                                }
+                        }
+                    ]
+            };
+
+            return (
+                <>
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify(richSnippetSpecialistCost)
+                        }}>
+                    </script>
+                    <div className={styles.Breadcrumbs}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-12">
+                                    <ul className={styles.Breadcrumbs__list}>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <Link href="/">
+                                                <a>
+                                                    <FaHome className={styles.Breadcrumbs__home} />
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <FaChevronRight />
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <Link href="/specialisten/">
+                                                <a>
+                                                    Specialisten
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <FaChevronRight />
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <Link href={`/specialisten/${data.specialist.slug}/`}>
+                                                <a>
+                                                    {data.specialist.name}
+                                                </a>
+                                            </Link>
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            <FaChevronRight />
+                                        </li>
+                                        <li className={styles.Breadcrumbs__item}>
+                                            Kosten
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+            break;
         default:
             return (
                 <>

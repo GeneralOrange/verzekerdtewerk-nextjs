@@ -1,5 +1,4 @@
 import { fetchAPI } from '../../../lib/api'
-import Error from 'next/error'
 
 import Headings from '../../../processing/metaData/Headings'
 import HeaderBanner from '../../../components/HeaderBanner'
@@ -9,7 +8,7 @@ import FlexLayout from '../../../components/FlexLayout'
 import Footer from '../../../components/footer/Footer'
 
 
-export default function SpecialistCosts({errorcode, data }){
+export default function SpecialistCosts({ data }){
     if(!data){
         return null;
     }
@@ -27,10 +26,7 @@ export default function SpecialistCosts({errorcode, data }){
 }
 
 export async function getStaticPaths() {
-    const costs = await fetchAPI('/costs');
     const specialists = await fetchAPI('/specialists');
-
-    //specialists.filter(specialist => specialist.id !== 2);
 
     const paths = specialists.map((specialist) => ({
         params: {
