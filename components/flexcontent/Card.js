@@ -11,8 +11,6 @@ export default function Card({ data, uri, slider }){
         return null;
     }
 
-    console.log(data);
-
     let card_slug = `${uri ? uri : ''}/${data.slug}/`;
 
     if(data.thumbnail){
