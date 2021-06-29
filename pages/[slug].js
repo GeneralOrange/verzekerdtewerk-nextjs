@@ -46,22 +46,13 @@ export async function getStaticProps({ params }) {
 
     const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
     const page = rawPageData[0];
-    //const pageID = page.id;
-
-    // const categories = await fetchAPI(`/categories?pages=${pageID}`);
-    // let relatedPages = [];
-
-    // categories.forEach(category => {
-    //     category.pages = category.pages.filter(page => page.id !== pageID);
-    //     relatedPages.push(...category.pages);
-    // });
 
     const menu = await fetchAPI('/menu');
     
     const footer = await fetchAPI('/footer');
 
     const rawSidebarData = await fetchAPI('/sidebar');
-    const sidebarBoolean = page.sidebar;
+    const sidebarBoolean = page ? page.sidebar : null;
 
     const sidebar = {
         rawSidebarData,
@@ -72,8 +63,7 @@ export async function getStaticProps({ params }) {
         page,
         menu,
         sidebar,
-        footer,
-        // relatedPages
+        footer
     }
 
     return {
