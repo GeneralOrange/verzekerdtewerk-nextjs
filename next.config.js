@@ -6,10 +6,9 @@ module.exports = {
     },
     images: {
         domains: [
+                'res.cloudinary.com',
                 'localhost',
-                'https://www.verzekerdtewerk.nl/',
-                'https://verzekerdtewerk-strapi.herokuapp.com/',
-                'https://res.cloudinary.com/'
+                'www.verzekerdtewerk.nl'
             ]
     }
 }

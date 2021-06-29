@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getStrapiMedia } from '../lib/media'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FaHome } from 'react-icons/fa'
@@ -48,7 +49,12 @@ export default function HeaderBanner({ data, homepage }){
                     </Row>
                 </Container>
                 
-                <img src={getStrapiMedia(data.image)} height={data.image.height} width={data.image.width} className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`} alt=""/>
+                <Image
+                    src={getStrapiMedia(data.image)}
+                    layout="fill"
+                    priority={true}
+                    className={`${styles.HeaderBanner__image} ${homepage ? styles.HeaderBanner__imageHomepage : ''}`}
+                    alt=""/>
             </div>
         </>
     )    

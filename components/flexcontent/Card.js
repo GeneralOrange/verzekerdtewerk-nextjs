@@ -13,12 +13,11 @@ export default function Card({ data, uri, slider }){
 
     if(data.thumbnail){
         var thumbnail = (
-            <img
+            <Image
                 className={styles.Card__thumbnail}
                 alt=""
                 src={getStrapiMedia(data.thumbnail)}
-                height={data.thumbnail.height}
-                width={data.thumbnail.width} />
+                layout="fill"/>
         );
     }
 
