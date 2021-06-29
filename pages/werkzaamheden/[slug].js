@@ -63,7 +63,7 @@ export async function getStaticProps({ params }) {
     const footer = await fetchAPI('/footer');
 
     const rawSidebarData = await fetchAPI('/sidebar');
-    const sidebarBoolean = job.sidebar;
+    const sidebarBoolean = job.sidebar ? job.sidebar : null;
 
     const sidebar = {
         rawSidebarData,

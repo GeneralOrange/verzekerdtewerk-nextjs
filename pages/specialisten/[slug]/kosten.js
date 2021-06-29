@@ -56,7 +56,7 @@ export async function getStaticProps({ params }) {
     const footer = await fetchAPI('/footer');
 
     const rawSidebarData = await fetchAPI('/sidebar');
-    const sidebarBoolean = cost.sidebar;
+    const sidebarBoolean = cost.sidebar ? cost.sidebar : null;
 
     const sidebar = {
         rawSidebarData,
