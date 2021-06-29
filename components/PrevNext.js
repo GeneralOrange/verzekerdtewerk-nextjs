@@ -4,7 +4,7 @@ import { FaChevronRight } from 'react-icons/fa'
 import { Container, Row, Col } from 'react-bootstrap'
 import styles from '../styles/PrevNext.module.scss'
 
-export default function PrevNext({ data, pageType }){
+export default function PrevNext({ data, pageType, nextValue }){
     if(!data){
         return null;
     }
@@ -24,13 +24,13 @@ export default function PrevNext({ data, pageType }){
                                     </Link>
                                 </div>
         
-                                <div className={ styles.PrevNext__next }>
+                                { nextValue && <div className={ styles.PrevNext__next }>
                                     <Link href={`/specialisten/${data.slug}/kosten/`}>
                                         <a>
                                             Door naar kosten <FaChevronRight/>
                                         </a>
                                     </Link>
-                                </div>
+                                </div> }
                             </div>
                         </Col>
                     </Row>
@@ -51,13 +51,13 @@ export default function PrevNext({ data, pageType }){
                                     </Link>
                                 </div>
         
-                                <div className={ styles.PrevNext__next }>
+                                { nextValue && <div className={ styles.PrevNext__next }>
                                     <Link href={`/werkzaamheden/${data.slug}/kosten/`}>
                                         <a>
                                             Door naar kosten <FaChevronRight/>
                                         </a>
                                     </Link>
-                                </div>
+                                </div> }
                             </div>
                         </Col>
                     </Row>

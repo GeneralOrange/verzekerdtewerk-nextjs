@@ -13,6 +13,12 @@ export default function Specialist({ data }){
     if(!data){
         return null;
     }
+
+    let nextValue = true;
+
+    if(!data.cost){
+        nextValue = false;
+    }
     
     return (
         <>
@@ -20,7 +26,7 @@ export default function Specialist({ data }){
             <Menu data={ data.menu }/>
             <HeaderBanner data={data.specialist.header} />
             <Breadcrumbs data={data.specialist} pageType={ 'specialist' }/>
-            <PrevNext data={data.specialist} pageType={ 'specialist' }/>
+            <PrevNext data={data.specialist} pageType={ 'specialist' } nextValue={ nextValue }/>
             <FlexLayout data={data.specialist.flexcontent} sidebar={data.sidebar} />
             <Footer data={data.footer}/>
         </>
@@ -48,15 +54,10 @@ export async function getStaticProps({ params }) {
 
     const rawspecialistData = await fetchAPI(`/specialists?slug=${slug}`);
     const specialist = rawspecialistData[0];
-    //const specialistID = specialist.id;
+    const specialistID = specialist.id;
 
-    // const categories = await fetchAPI(`/categories?specialists=${specialistID}`);
-    // let relatedspecialists = [];
-
-    // categories.forEach(category => {
-    //     category.specialists = category.specialists.filter(specialist => specialist.id !== specialistID);
-    //     relatedspecialists.push(...category.specialists);
-    // });
+    const rawcostData = await fetchAPI(`/costs?specialist=${specialistID}`);
+    const cost = rawcostData[0];
 
     const menu = await fetchAPI('/menu');
     
@@ -72,10 +73,10 @@ export async function getStaticProps({ params }) {
 
     const data = {
         specialist,
+        cost,
         menu,
         sidebar,
-        footer,
-        // relatedspecialists
+        footer
     }
 
     return {

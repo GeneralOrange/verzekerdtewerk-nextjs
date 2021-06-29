@@ -13,6 +13,12 @@ export default function Job({ data }){
     if(!data){
         return null;
     }
+
+    let nextValue = true;
+
+    if(!data.cost){
+        nextValue = false;
+    }
     
     return (
         <>
@@ -20,7 +26,7 @@ export default function Job({ data }){
             <Menu data={ data.menu }/>
             <HeaderBanner data={data.job.header} />
             <Breadcrumbs data={data.job} pageType={ 'job' }/>
-            <PrevNext data={data.job} pageType={ 'job' }/>
+            <PrevNext data={data.job} pageType={ 'job' } nextValue={ nextValue }/>
             <FlexLayout data={data.job.flexcontent} sidebar={data.sidebar} />
             <Footer data={data.footer}/>
         </>
@@ -48,6 +54,9 @@ export async function getStaticProps({ params }) {
 
     const rawjobData = await fetchAPI(`/jobs?slug=${slug}`);
     const job = rawjobData[0];
+    const jobID = job.id;
+    const rawcostData = await fetchAPI(`/costs?job=${jobID}`);
+    const cost = rawcostData[0];
 
     const menu = await fetchAPI('/menu');
     
@@ -63,6 +72,7 @@ export async function getStaticProps({ params }) {
 
     const data = {
         job,
+        cost,
         menu,
         sidebar,
         footer
