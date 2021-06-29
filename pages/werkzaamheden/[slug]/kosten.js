@@ -57,7 +57,7 @@ export async function getStaticProps({ params }) {
     const jobID = jobs[0].id;
 
     const rawcostData = await fetchAPI(`/costs?job=${jobID}`);
-    const cost = rawcostData[0];
+    const cost = rawcostData[0] ? rawcostData[0] : null;
 
     const menu = await fetchAPI('/menu');
     
