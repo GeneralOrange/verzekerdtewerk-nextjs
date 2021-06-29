@@ -24,7 +24,7 @@ export default function CategoryCollection({ data }) {
             <Menu data={ data.menu }/>
             <HeaderBanner data={ data.categoriesOverview.header }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
-            <CardLayout data={ data } sidebar={ false } uri={ '/categorieen' }/>
+            <CardLayout data={ data } sidebar={ data.sidebar } uri={ '/categorieen' }/>
             <Footer data={data.footer}/>
         </>
     )
@@ -36,10 +36,19 @@ export async function getStaticProps() {
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 
+    const rawSidebarData = await fetchAPI('/sidebar');
+    const sidebarBoolean = true;
+
+    const sidebar = {
+        rawSidebarData,
+        sidebarBoolean,
+    }
+
     const data = {
         categoriesOverview,
         categories,
         menu,
+        sidebar,
         footer
     }
 
