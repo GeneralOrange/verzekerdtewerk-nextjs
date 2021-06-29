@@ -1,6 +1,4 @@
-import 'lazysizes';
 import { FaChevronRight } from 'react-icons/fa'
-
 import { getStrapiMedia } from '../../lib/media'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -16,9 +14,9 @@ export default function Card({ data, uri, slider }){
     if(data.thumbnail){
         var thumbnail = (
             <img
-                className={`${styles.Card__thumbnail} lazyload`}
+                className={styles.Card__thumbnail}
                 alt=""
-                data-src={getStrapiMedia(data.thumbnail)}
+                src={getStrapiMedia(data.thumbnail)}
                 height={data.thumbnail.height}
                 width={data.thumbnail.width} />
         );
