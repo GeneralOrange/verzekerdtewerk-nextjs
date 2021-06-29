@@ -1,5 +1,6 @@
 import { fetchAPI } from '../../../lib/api'
-
+import DefaultErrorPage from 'next/error'
+import Head from 'next/head'
 import Headings from '../../../processing/metaData/Headings'
 import HeaderBanner from '../../../components/HeaderBanner'
 import Menu from '../../../components/menu/Menu'
@@ -10,8 +11,15 @@ import Footer from '../../../components/footer/Footer'
 
 
 export default function JobCosts({ data }){
-    if(!data){
-        return null;
+    if(!data || !data.cost){
+        return (
+            <>
+                <Head>
+                    <meta name="robots" content="noindex"/>
+                </Head>
+                <DefaultErrorPage statusCode={404} />
+            </>  
+        );
     }
     
     return (

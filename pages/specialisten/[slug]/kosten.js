@@ -1,5 +1,6 @@
 import { fetchAPI } from '../../../lib/api'
-
+import DefaultErrorPage from 'next/error'
+import Head from 'next/head'
 import Headings from '../../../processing/metaData/Headings'
 import HeaderBanner from '../../../components/HeaderBanner'
 import Menu from '../../../components/menu/Menu'
@@ -10,8 +11,15 @@ import Footer from '../../../components/footer/Footer'
 
 
 export default function SpecialistCosts({ data }){
-    if(!data){
-        return null;
+    if(!data || !data.cost){
+        return (
+            <>
+                <Head>
+                    <meta name="robots" content="noindex"/>
+                </Head>
+                <DefaultErrorPage statusCode={404} />
+            </>  
+        );
     }
     
     return (
@@ -49,7 +57,7 @@ export async function getStaticProps({ params }) {
     const specialistID = specialist[0].id;
 
     const rawcostData = await fetchAPI(`/costs?specialist=${specialistID}`);
-    const cost = rawcostData[0];
+    const cost = rawcostData[0] ? rawcostData[0] : null;
 
     const menu = await fetchAPI('/menu');
     
