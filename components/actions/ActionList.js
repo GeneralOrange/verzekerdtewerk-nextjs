@@ -9,7 +9,7 @@ export default function ActionList({ actions }){
     return (
         <div className={ styles.ActionList }>
             {actions.map((action, index) => (
-                <ActionItem key={ index } action={ action }/>
+                <ActionItem key={ index } action={ action } withRank={true}/>
             ))}
         </div>
     );

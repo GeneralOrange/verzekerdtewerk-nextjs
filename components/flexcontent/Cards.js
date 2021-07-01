@@ -11,6 +11,7 @@ export default function Cards({ data, uri }){
 
     let timeout = null;
     const [cards, setCards] = useState(data);
+    const [cardsCount, setCardsCount] = useState(parseInt(data.length));
 
     const filterCards = (e) => {
         clearTimeout(timeout);
@@ -24,19 +25,26 @@ export default function Cards({ data, uri }){
                 }
             });
             setCards(hits);
+            setCardsCount(parseInt(hits.length));
         },200);
     }
 
     return (
         <>
-            <CardFilter filterCards={filterCards}/>
+            <CardFilter filterCards={filterCards} cardsCount={ cardsCount }/>
             <div className={styles.Cards}>
                 <Row>
-                    {cards.map((value, index) => (
+                    {cards && cards.map((value, index) => (
                         <Col key={index} xs={6} xl={3}>
                             <Card data={value} uri={ uri }/>  
                         </Col>
                     ))}
+
+                    {cards.length < 1 && 
+                        <Col>
+                            Geen resultaten
+                        </Col>
+                    }
                 </Row>
             </div>
         </>

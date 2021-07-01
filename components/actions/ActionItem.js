@@ -4,11 +4,12 @@ import { getStrapiMedia } from '../../lib/media'
 import { FaChevronRight } from 'react-icons/fa'
 import styles from '../../styles/actions/ActionItem.module.scss'
 
-export default function ActionItem({ action }){
+export default function ActionItem({ action, withRank }){
     if(!action){
         return null;
     }
 
+    const additionalClassName = withRank ? styles.ActionItemwithRank : '';
 
     return (
         <Link href={ action.outgoing_link }>
@@ -16,7 +17,7 @@ export default function ActionItem({ action }){
                 rel='nofollow'
                 target='_blank'
                 className={ styles.ActionItem__link }>
-                <div className={ styles.ActionItem }>
+                <div className={`${styles.ActionItem} ${additionalClassName}`}>
                     <div className={ styles.ActionItem__content }>
                         <h3 className={ styles.ActionItem__title}>{ action.title }</h3>
                         <p className={ styles.ActionItem__description}>

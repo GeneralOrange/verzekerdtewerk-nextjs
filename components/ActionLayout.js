@@ -1,8 +1,8 @@
 import { Container, Row, Col } from 'react-bootstrap'
-import FlexContentController from './flexcontent/FlexContentController'
+import ActionGrid from './actions/ActionGrid'
 import Sidebar from './sidebar/Sidebar'
 
-export default function FlexLayout({ data, sidebar }){
+export default function ActionLayout({ data, sidebar }){
     if(!data && !sidebar){
         return null;
     }
@@ -13,7 +13,7 @@ export default function FlexLayout({ data, sidebar }){
                 <Container>
                     <Row>
                         <Col>
-                            <FlexContentController data={data}/>
+                            <ActionGrid actions={ data }/>
                         </Col>
                     </Row>
                 </Container>
@@ -26,7 +26,7 @@ export default function FlexLayout({ data, sidebar }){
             <Container>
                 <Row>
                     <Col lg={8}>
-                        <FlexContentController data={data}/>
+                        <ActionGrid actions={data}/>
                     </Col>
                     <Col lg={4}>
                         <Sidebar data={sidebar.rawSidebarData}/>

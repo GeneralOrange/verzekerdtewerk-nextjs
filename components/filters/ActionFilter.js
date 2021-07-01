@@ -1,22 +1,22 @@
 import { Row, Col, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearch } from 'react-icons/fa'
-import styles from '../../styles/filters/CardFilter.module.scss'
+import styles from '../../styles/filters/ActionFilter.module.scss'
 
-export default function CardFilter({ filterCards, cardsCount }){
+export default function ActionFilter({ filterActions, actionsCount }){
 
     return (
         <>  
             <Row>
                 <Col lg={8}>
-                    <InputGroup className={ styles.CardFilter }>
+                    <InputGroup className={ styles.ActionFilter }>
                         <FormControl
-                            onChange={ filterCards }
-                            className={ styles.CardFilter__input }
+                            onChange={ filterActions }
+                            className={ styles.ActionFilter__input }
                             placeholder="Filter hier..."
                         />
                         <InputGroup.Append>
-                            <InputGroup.Text className={ styles.CardFilter__append }>
-                                <FaSearch className={ styles.CardFilter__icon }/> Filter
+                            <InputGroup.Text className={ styles.ActionFilter__append }>
+                                <FaSearch className={ styles.ActionFilter__icon }/> Filter
                             </InputGroup.Text>
                         </InputGroup.Append>
                     </InputGroup>
@@ -24,7 +24,7 @@ export default function CardFilter({ filterCards, cardsCount }){
             </Row>
             <Row>
                 <Col>
-                    <div className={ styles.CardFilter__description }>Resultaten: ({ cardsCount })</div>
+                    <div className={ styles.ActionFilter__description }>Resultaten: ({ actionsCount })</div>
                 </Col>
             </Row>
         </>

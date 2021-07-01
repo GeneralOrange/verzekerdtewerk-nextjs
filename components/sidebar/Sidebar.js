@@ -1,4 +1,3 @@
-import SearchForm from '../atoms/SearchForm'
 import ActionList from '../actions/ActionList'
 import styles from '../../styles/sidebar/Sidebar.module.scss'
 
@@ -9,7 +8,6 @@ export default function Sidebar({ data }){
 
     return (
         <>
-            <SearchForm/>
             <div className={styles.Sidebar}>
                 <strong className={styles.Sidebar__title}>{data.title}</strong>
                 <p className={styles.Sidebar__description}>{data.description}</p>

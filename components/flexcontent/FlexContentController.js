@@ -1,3 +1,4 @@
+import { Col, Row } from 'react-bootstrap'
 import Content from './Content'
 import Usp from './Usp'
 import AccordionComponent from './AccordionComponent'
@@ -9,17 +10,15 @@ export default function FlexContentController({ data }){
         return null;
     }
 
-    let grid = `col-12`;
-
     return (
         <div className={styles.FlexContent}>    
-            <div className="row">
+            <Row>
                 {data.map((component, index) => (
-                    <div key={index} className={`${grid}${component.width ? ` col-lg-${component.width}` : ``}`}>
+                    <Col key={index} lg={component.width ? component.width : 12}>
                         {FlexContentDistrubutor({ component })}
-                    </div>
+                    </Col>
                 ))}
-            </div>
+            </Row>
         </div>
     )
 }

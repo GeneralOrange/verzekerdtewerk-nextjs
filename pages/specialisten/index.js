@@ -33,7 +33,7 @@ export default function SpecialistCollection({ data }) {
 }
 
 export async function getStaticProps() {
-    const specialists = await fetchAPI('/specialists');
+    const specialists = await fetchAPI('/specialists?_sort=name:ASC');
     const specialistsOverview = await fetchAPI('/specialists-overview');
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
