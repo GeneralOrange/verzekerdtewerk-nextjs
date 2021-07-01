@@ -9,13 +9,6 @@
         }
     }
 
-    &__wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-    }
-
     &__item {
         margin-right: 15px;
 
