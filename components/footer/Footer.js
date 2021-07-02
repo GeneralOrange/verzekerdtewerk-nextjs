@@ -10,6 +10,9 @@ export default function Footer({ data }){
       return null;
     }
 
+    const date = new Date();
+    const year = date.getFullYear();
+
     return (
       <>
         <div className={styles.Footer}>
@@ -34,11 +37,20 @@ export default function Footer({ data }){
               </Row>
             </div>
             <div className={styles.Footer__bottom}>
-                <Row>
-                  <FooterSections data={data} />
-                </Row>
+              <Row>
+                <FooterSections data={data} />
+              </Row>
             </div>
           </Container>
+          <div className={styles.Footer__copyright}>
+            <Container>
+              <Row>
+                <Col>
+                  &copy; 2020 - {year} Verzekerdtewerk
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </div>
       </>
     )

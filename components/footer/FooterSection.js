@@ -24,7 +24,6 @@ export default function FooterSection({ data }){
                   </a> 
                 </Link>
               </li>
-              
             ))}
 
             {data.categories.map((value, key) => (
@@ -35,7 +34,26 @@ export default function FooterSection({ data }){
                   </a> 
                 </Link>
               </li>
-              
+            ))}
+
+            {data.specialists.map((value, key) => (
+              <li key={key}>
+                <Link href={`/specialisten/${value.slug}/`}>
+                  <a>
+                    {value.name}
+                  </a> 
+                </Link>
+              </li>
+            ))}
+
+            {data.jobs.map((value, key) => (
+              <li key={key}>
+                <Link href={`/werkzaamheden/${value.slug}/`}>
+                  <a>
+                    {value.name}
+                  </a> 
+                </Link>
+              </li>
             ))}
             
             {data.menu_footer_item.map((value, key) => (
