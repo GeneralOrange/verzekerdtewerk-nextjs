@@ -37,7 +37,6 @@ export async function getStaticProps() {
     const actionsOverview = await fetchAPI('/actions-overview');
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
-
     const rawSidebarData = await fetchAPI('/sidebar');
     const sidebarBoolean = true;
 
