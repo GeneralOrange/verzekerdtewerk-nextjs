@@ -82,8 +82,12 @@ function FlexContentDistrubutor({ component }){
                 ]
             }
 
+            const sliderOptions = {
+                slidesToShow: component.slides_to_show ? component.slides_to_show : 4
+            }
+
             return (
-                <CardSlider data={ cards }/>
+                <CardSlider data={ cards } sliderOptions={ sliderOptions }/>
             )
             break;
         case 'custom.mailchimp-form':

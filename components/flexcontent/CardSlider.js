@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styles from '../../styles/flexcontent/CardSlider.module.scss'
 
-export default function CardSlider({ data }){
+export default function CardSlider({ data, sliderOptions }){
     if(!data || data.length < 1){
         return null;
     }
@@ -17,15 +17,15 @@ export default function CardSlider({ data }){
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: sliderOptions.slidesToShow ? sliderOptions.slidesToShow : 4,
+        slidesToScroll: 2,
         initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: true
                 }
@@ -34,7 +34,7 @@ export default function CardSlider({ data }){
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                     infinite: true,
                     dots: false
                 }
