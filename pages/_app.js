@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/globals.scss'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../lib/gtag'
+import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/globals.scss'
 
 const App = ({ Component, pageProps }) => {
 

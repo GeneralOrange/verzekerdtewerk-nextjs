@@ -1,0 +1,64 @@
+@import './variables/color';
+
+.CookieConsent {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    bottom: 50px;
+    left: 50px;
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 18px 16px 0 rgba(0, 0, 0, 0.12);
+
+    &__content {
+        font: {
+            size: 12px;
+            weight: 400;
+        }
+        color: map-get($colors, 'text');
+        margin: 0 0 15px;
+
+        strong {
+            font: {
+                size: 20px;
+            }
+        }
+
+        a {
+            color: map-get($colors, 'primary');
+            text-decoration: underline;
+        }
+    }
+
+    &__buttonWrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__buttonAccept {
+        color: white;
+        background-color: map-get($colors, 'primary-light');
+        border: 1px solid transparent;
+        border-radius: 25px;
+        padding: 10px 20px;
+        margin: 0 0 0 10px;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
+
+    &__buttonDecline {
+        color: map-get($colors, 'primary-light');
+        background-color: white;
+        border: 1px solid map-get($colors, 'primary-light');
+        border-radius: 25px;
+        padding: 10px 20px;
+
+        &:hover {
+            filter: brightness(.7);
+        }
+    }
+}
