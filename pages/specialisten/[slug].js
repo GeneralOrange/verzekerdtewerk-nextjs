@@ -55,6 +55,7 @@ export async function getStaticProps({ params }) {
     const rawspecialistData = await fetchAPI(`/specialists?slug=${slug}`);
     const specialist = rawspecialistData[0];
     const specialistID = specialist.id;
+    specialist.pageType = 'specialist';
 
     const rawcostData = await fetchAPI(`/costs?specialist=${specialistID}`);
     const cost = rawcostData[0] ? rawcostData[0] : null;

@@ -46,6 +46,7 @@ export async function getStaticProps({ params }) {
 
     const rawPageData = await fetchAPI(`/pages?slug=${slug}`);
     const page = rawPageData[0];
+    page.pageType = 'page';
 
     const menu = await fetchAPI('/menu');
     
