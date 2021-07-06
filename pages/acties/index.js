@@ -35,6 +35,9 @@ export default function ActionCollection({ data }) {
 export async function getStaticProps() {
     const actions = await fetchAPI('/actions?_sort=updated_at:ASC');
     const actionsOverview = await fetchAPI('/actions-overview');
+    actionsOverview.pageType = 'page';
+    actionsOverview.slug = 'acties';
+    actionsOverview.name = 'Acties';
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
     const rawSidebarData = await fetchAPI('/sidebar');

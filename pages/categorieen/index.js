@@ -33,6 +33,9 @@ export default function CategoryCollection({ data }) {
 export async function getStaticProps() {
     const categories = await fetchAPI('/categories?_sort=name:ASC');
     const categoriesOverview = await fetchAPI('/categories-overview');
+    categoriesOverview.pageType = 'page';
+    categoriesOverview.slug = 'categorieen';
+    categoriesOverview.name = 'Categorieën';
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 

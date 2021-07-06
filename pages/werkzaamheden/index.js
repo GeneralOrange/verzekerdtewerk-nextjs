@@ -35,6 +35,9 @@ export default function JobCollection({ data }) {
 export async function getStaticProps() {
     const jobs = await fetchAPI('/jobs?_sort=name:ASC');
     const jobsOverview = await fetchAPI('/jobs-overview');
+    jobsOverview.pageType = 'page';
+    jobsOverview.slug = 'werkzaamheden';
+    jobsOverview.name = 'Werkzaamheden';
     const menu = await fetchAPI('/menu');
     const footer = await fetchAPI('/footer');
 
