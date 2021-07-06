@@ -38,8 +38,8 @@ export default function Menu({ data }){
     let logoSrc = '/logo_white_large.png';
 
     let imageProps = {
-      w: 120,
-      h: 80
+      w: 128,
+      h: 92.5
     }
 
     if(isScrolling){
