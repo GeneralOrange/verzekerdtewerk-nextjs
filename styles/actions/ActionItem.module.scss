@@ -76,7 +76,9 @@
         right: -10px;
         width: 100px;
         height: 100px;
-        clip-path: circle(50.0% at 50% 50%);
+        border-radius: 50%;
+        overflow: hidden;
+        border: 1px solid map-get($colors, 'primary');
         transition: {
             property: transform;
             timing-function: ease;
