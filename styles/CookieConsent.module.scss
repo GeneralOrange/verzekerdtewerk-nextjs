@@ -4,13 +4,20 @@
     display: block;
     position: fixed;
     z-index: 10;
-    bottom: 50px;
-    left: 50px;
-    max-width: 700px;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    max-width: calc(100% -30px);
     padding: 20px;
     border-radius: 6px;
     background-color: white;
     box-shadow: 0 18px 16px 0 rgba(0, 0, 0, 0.12);
+
+    @media screen and (min-width: 992px){
+        bottom: 50px;
+        left: 50px;
+        max-width: 700px;
+    }
 
     &__content {
         font: {
@@ -42,11 +49,22 @@
         background-color: map-get($colors, 'primary-light');
         border: 1px solid transparent;
         border-radius: 25px;
-        padding: 10px 20px;
-        margin: 0 0 0 10px;
+        padding: 5px 10px;
+        margin: 0 0 0 5px;
+        font: {
+            size: 12px;
+        }
 
         &:hover {
             filter: brightness(1.2);
+        }
+
+        @media screen and (min-width: 992px){
+            padding: 10px 20px;
+            margin: 0 0 0 10px;
+            font: {
+                size: 15px;
+            }
         }
     }
 
@@ -55,10 +73,20 @@
         background-color: white;
         border: 1px solid map-get($colors, 'primary-light');
         border-radius: 25px;
-        padding: 10px 20px;
+        padding: 5px 10px;
+        font: {
+            size: 12px;
+        }
 
         &:hover {
             filter: brightness(.7);
+        }
+
+        @media screen and (min-width: 992px){
+            padding: 10px 20px;
+            font: {
+                size: 15px;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 import { fetchAPI } from '../../lib/api'
-
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Headings from '../../processing/metaData/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
@@ -14,11 +15,20 @@ export default function Job({ data }){
         return null;
     }
 
-    let nextValue = true;
+    let nextValue = false;
 
-    if(!data.cost){
-        nextValue = false;
+    if(data.cost){
+        nextValue = true;
     }
+
+    const router = useRouter();
+
+    useEffect(()=> {
+        if(nextValue === true){
+            
+            router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/werkzaamheden/${data.job.slug}/kosten/`);
+        }
+    });
     
     return (
         <>
