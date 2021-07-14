@@ -1,9 +1,14 @@
+import { useLayoutEffect } from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
+import { hotjar } from 'react-hotjar'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default class MyDocument extends Document {
   render() {
+    useLayoutEffect(()=> {
+      hotjar.initialize(process.env.NEXT_PUBLIC_HOTJAR_ID, process.env.NEXT_PUBLIC_HOTJAR_SV);
+    }, []);
+    
     return (
       <Html lang="nl">
         <Head>
@@ -25,7 +30,7 @@ export default class MyDocument extends Document {
             });
           `,
             }}
-          />
+          />       
         </Head>
         <body>
           <Main />
