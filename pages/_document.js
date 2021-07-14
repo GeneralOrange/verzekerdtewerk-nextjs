@@ -1,13 +1,9 @@
-import { useLayoutEffect } from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { hotjar } from 'react-hotjar'
 import { GA_TRACKING_ID } from '../lib/gtag'
+import { HJID, HJSV } from '../lib/hotjar'
 
 export default class MyDocument extends Document {
   render() {
-    useLayoutEffect(()=> {
-      hotjar.initialize(process.env.NEXT_PUBLIC_HOTJAR_ID, process.env.NEXT_PUBLIC_HOTJAR_SV);
-    }, []);
     
     return (
       <Html lang="nl">
@@ -29,6 +25,20 @@ export default class MyDocument extends Document {
               page_path: window.location.pathname,
             });
           `,
+            }}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: ` 
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:${HJID},hjsv:${HJSV}};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+              `,
             }}
           />       
         </Head>
