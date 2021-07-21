@@ -10,5 +10,14 @@ module.exports = {
                 'localhost',
                 'www.verzekerdtewerk.nl'
             ]
-    }
+    },
+    async redirects() {
+        return [
+          {
+            source: '/informatie-kitter/',
+            destination: '/specialisten/kitter/',
+            permanent: true,
+          },
+        ]
+    },
 }

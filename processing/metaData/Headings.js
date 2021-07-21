@@ -18,7 +18,7 @@ export default function Headings({ data }){
             <Head>
                 <link rel="shortcut icon" href="/logo.svg"/>
                 <meta name="robots" content="index, follow"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5"/>
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
                 <link rel="canonical" href={ link }/>
