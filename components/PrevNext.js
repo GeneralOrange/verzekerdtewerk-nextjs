@@ -90,9 +90,9 @@ export default function PrevNext({ data, pageType, nextValue }){
                             <Col>
                                 <div className={ styles.PrevNext }>
                                     <div className={ styles.PrevNext__prev }>
-                                        <Link href={`/werkzaamheden/${data.job.slug}/`}>
+                                        <Link href={`/werkzaamheden/`}>
                                             <a>
-                                                <FaChevronLeft/> Terug naar werkzaamheid
+                                                <FaChevronLeft/> Terug naar werkzaamheden
                                             </a>
                                         </Link>
                                     </div>
