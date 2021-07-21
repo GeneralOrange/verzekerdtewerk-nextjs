@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import FooterItem from './FooterItem'
 import Socials from '../socials/Socials'
+import SimpleList from '../molecules/SimpleList'
 import styles from '../../styles/footer/Footer.module.scss'
 
 export default function FooterSection({ data }){
@@ -16,45 +17,10 @@ export default function FooterSection({ data }){
           </div>
   
           <ul className={styles.FooterSection__list}>
-            {data.pages.map((value, key) => (
-              <li key={key}>
-                <Link href={`/${value.slug}/`}>
-                  <a>
-                    {value.name}
-                  </a> 
-                </Link>
-              </li>
-            ))}
-
-            {data.categories.map((value, key) => (
-              <li key={key}>
-                <Link href={`/categorie/${value.slug}/`}>
-                  <a>
-                    {value.name}
-                  </a> 
-                </Link>
-              </li>
-            ))}
-
-            {data.specialists.map((value, key) => (
-              <li key={key}>
-                <Link href={`/specialisten/${value.slug}/`}>
-                  <a>
-                    {value.name}
-                  </a> 
-                </Link>
-              </li>
-            ))}
-
-            {data.jobs.map((value, key) => (
-              <li key={key}>
-                <Link href={`/werkzaamheden/${value.slug}/`}>
-                  <a>
-                    {value.name}
-                  </a> 
-                </Link>
-              </li>
-            ))}
+            <SimpleList data={data.pages} uri='/'/>
+            <SimpleList data={data.categories} uri='/categorieen/'/>
+            <SimpleList data={data.specialists} uri='/specialisten/'/>
+            <SimpleList data={data.jobs} uri='/werkzaamheden/'/>
             
             {data.menu_footer_item.map((value, key) => (
               <FooterItem key={key} component={value}/>

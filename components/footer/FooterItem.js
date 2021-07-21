@@ -5,18 +5,22 @@ export default function FooterItem({ component }) {
         return null;
     }
 
-    let page_url;
-    let category_url;
     let link;
 
     if(component.page){
-        page_url = `/${component.page.slug}/`;
-        link = page_url;
+        link = `/${component.page.slug}/`;
     }
 
     if(component.category && component.is_category){
-        category_url = `/categorie/${component.category.slug}/`;
-        link = category_url;
+        link = `/categorieen/${component.category.slug}/`;
+    }
+
+    if(component.job && component.is_job){
+        link = `/werkzaamheden/${component.job.slug}/`;
+    }
+
+    if(component.specialist && component.is_specialist){
+        link = `/specialisten/${component.specialist.slug}/`;
     }
 
     if(component.custom_link && component.is_customlink){
