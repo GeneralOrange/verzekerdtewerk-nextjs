@@ -6,4 +6,17 @@
     font-family: inherit;
     color: map-get($colors, 'text');
     margin: 0 0 30px;
+
+    a {
+        color: map-get($colors, 'primary-light');
+        text-decoration: underline;
+        font: {
+            weight: 500;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: map-get($colors, 'primary');
+        }
+    }
 }
