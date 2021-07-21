@@ -1,4 +1,5 @@
 import unified from '../node_modules/unified'
+import remarkGFM from 'remark-gfm'
 import markdown from '../node_modules/remark-parse'
 import html from '../node_modules/remark-html'
 import ReactHtmlParser from 'react-html-parser'
@@ -22,6 +23,7 @@ export default function MarkDown({ data }){
 
     unified()
         .use(markdown)
+        .use(remarkGFM)
         .use(html)
         .process(data, function(err, processedData) {
             if (err) throw err
