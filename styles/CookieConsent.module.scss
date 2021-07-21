@@ -19,6 +19,13 @@
         max-width: 700px;
     }
 
+    &__title {
+        font: {
+            size: 20px;
+        }
+        margin-bottom: 10px;
+    }
+
     &__content {
         font: {
             size: 12px;
@@ -26,12 +33,6 @@
         }
         color: map-get($colors, 'text');
         margin: 0 0 15px;
-
-        strong {
-            font: {
-                size: 20px;
-            }
-        }
 
         a {
             color: map-get($colors, 'primary');

@@ -28,13 +28,12 @@ export default function Footer({ data }){
           buttonText='Accepteren en doorgaan'
           declineButtonText='Nee, bedankt'
         >
-          <div><strong>Cookies!</strong></div>
-          Wij, en derde partijen, maken op onsze website gebruik van cookies.
-          Wij gebruiken cookies voor het bijhouden van statistieken (de cookies van Google Anlytics zijn volledig geanonimiseerd),
-          om voorkeuren op te slaan, maar ook voor marketingsdoeleinden. Door op 'Accepteren en doorgaan' te klikkn, ga je akkoord met het
-          gebruik van alle cookies zoals omschreven in onze <Link href='/cookie-policy/'>
+          <div className={ cookieStyles.CookieConsent__title }>
+            <strong>Beste bezoeker!</strong>
+          </div>
+          Verzekerd te werk gebruikt analytische cookies om iedere gebruiker de optimaalste gebruikerservaring te bieden en functionele cookies om de gewenste ingestelde voorkeuren op te slaan. Hiernaast worden er cookies van derde partijen geplaatst om gepersonaliseerde advertenties te kunnen tonen en de inhoud van de advertenties op jouw voorkeuren af te stemmen. Er worden cookies geplaatst door sociale media netwerken. Jouw internetgedrag kan door deze derden gevolgd worden. Door op zelf instellen te klikken kunt u hier meer over lezen en uw voorkeuren aan te passen. Door op `Accepteren´ te klikken gaat u akkoord met het gebruik van alle cookies zoals omschreven staat in onze  <Link href='/cookie-policy/'>
             <a>
-              cookie verklaring
+              cookie policy
             </a>
           </Link>
         </CookieConsent>
