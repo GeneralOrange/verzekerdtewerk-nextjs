@@ -3,6 +3,7 @@ import Content from './Content'
 import Usp from './Usp'
 import AccordionComponent from './AccordionComponent'
 import CardSlider from './CardSlider'
+import ContactForm from './ContactForm'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
 
 export default function FlexContentController({ data }){
@@ -90,8 +91,10 @@ function FlexContentDistrubutor({ component }){
                 <CardSlider data={ cards } sliderOptions={ sliderOptions }/>
             )
             break;
-        case 'custom.mailchimp-form':
-            return null;
+        case 'custom.form':
+            return (
+                <ContactForm data={ component }/>
+            )
             break;
         case 'custom.accordion':
             return (

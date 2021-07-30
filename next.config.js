@@ -2,7 +2,8 @@ module.exports = {
     trailingSlash: true,
     env: {
         API_ENDPOINT: process.env.API_ENDPOINT,
-        SITE_URL: process.env.SITE_URL
+        SITE_URL: process.env.SITE_URL,
+        SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
     },
     images: {
         domains: [

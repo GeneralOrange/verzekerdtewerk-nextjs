@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.5",
     "bootstrap": "^4.6.0",
     "lazysizes": "^5.3.2",
     "next": "10.0.8",
