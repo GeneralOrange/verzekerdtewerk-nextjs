@@ -10,7 +10,10 @@ export default function ContactForm({ data }) {
     })
     
     const [inputs, setInputs] = useState({
+        to_adres: data.to_adres ? data.to_adres : 'support@verzekerdtewerk.nl',
+        name: '',
         email: '',
+        subject: '',
         message: ''
     })
     
@@ -22,7 +25,10 @@ export default function ContactForm({ data }) {
                 info: { error: false, msg: msg }
             })
             setInputs({
+                to_adres: data.to_adres ? data.to_adres : 'support@verzekerdtewerk.nl',
+                name: '',
                 email: '',
+                subject: '',
                 message: ''
             })
         } else {
@@ -71,6 +77,16 @@ export default function ContactForm({ data }) {
             {title}
                 <Form onSubmit={handleOnSubmit}>
                     <Form.Group className="mb-3">
+                        <Form.Label>Naam</Form.Label>
+                        <Form.Control
+                            id="name"
+                            type="text"
+                            onChange={handleOnChange}
+                            required
+                            value={inputs.name}
+                            placeholder="Uw Naam"/>
+                    </Form.Group>
+                    <Form.Group className="mb-3">
                         <Form.Label>Email</Form.Label>
                         <Form.Control
                             id="email"
@@ -78,7 +94,17 @@ export default function ContactForm({ data }) {
                             onChange={handleOnChange}
                             required
                             value={inputs.email}
-                            placeholder="Uw email-adres"/>
+                            placeholder="Bijv. info@verzekerdtewerk.nl"/>
+                    </Form.Group>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Reden voor contact</Form.Label>
+                        <Form.Control
+                            id="subject"
+                            type="text"
+                            onChange={handleOnChange}
+                            required
+                            value={inputs.subject}
+                            placeholder="De reden dat u contact wilt opnemen"/>
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <Form.Label>Bericht</Form.Label>
