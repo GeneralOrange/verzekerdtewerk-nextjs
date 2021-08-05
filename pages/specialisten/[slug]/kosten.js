@@ -26,7 +26,7 @@ export default function SpecialistCosts({ data }){
         <>
             <Headings data={data.cost} />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={data.cost.header} />
+            <HeaderBanner data={data.cost.header} asHeader={ true }/>
             <Breadcrumbs data={data.cost} pageType={ 'cost' }/>
             <PrevNext data={data.cost} pageType={ 'cost' }/>
             <FlexLayout data={data.cost.flexcontent} sidebar={data.sidebar} />

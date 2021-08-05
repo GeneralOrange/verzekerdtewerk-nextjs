@@ -24,7 +24,7 @@ export default function SpecialistCollection({ data }) {
         <>
             <Headings data={ data.specialistsOverview } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ data.specialistsOverview.header }/>
+            <HeaderBanner data={ data.specialistsOverview.header } asHeader={ true }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
             <CardLayout data={ data } sidebar={ data.sidebar } uri={ '/specialisten' }/>
             <Footer data={data.footer}/>

@@ -1,0 +1,53 @@
+@import '../variables/color';
+
+.Button {
+    display: inline;
+    margin: 20px 5px 0;
+    background: {
+        color: map-get($colors, 'primary');
+    }
+    color: white;
+    border: 2px solid transparent;
+    padding: 5px 15px;
+    border-radius: 25px;
+    font: {
+        size: 18px;
+        weight: 500;
+    }
+    transition: {
+        property: backgroundColor;
+        duration: 300ms;
+        timing-function: ease;
+    };
+
+    &:first-of-type {
+        margin-left: 0;
+    }
+
+    &:hover {
+        color: white;
+        border: 2px solid map-get($colors, 'primary-light');
+        background: {
+            color: map-get($colors, 'primary');
+        }
+    }
+
+    &Green {
+        background: {
+            color: map-get($colors, 'green');
+        }
+    }
+
+    &Red {
+        background: {
+            color: map-get($colors, 'red');
+        }
+    }
+
+    &__icon {
+        font: {
+            size: 14px;
+        }
+        margin-left: 5px;
+    }
+}

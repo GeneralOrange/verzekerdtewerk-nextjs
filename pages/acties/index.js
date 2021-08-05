@@ -24,7 +24,7 @@ export default function ActionCollection({ data }) {
         <>
             <Headings data={ data.actionsOverview } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ data.actionsOverview.header }/>
+            <HeaderBanner data={ data.actionsOverview.header } asHeader={ true }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
             <ActionLayout data={ data.actions } sidebar={ data.sidebar }/>
             <Footer data={data.footer}/>

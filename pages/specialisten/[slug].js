@@ -24,7 +24,7 @@ export default function Specialist({ data }){
         <>
             <Headings data={data.specialist} />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={data.specialist.header} />
+            <HeaderBanner data={data.specialist.header} asHeader={ true }/>
             <Breadcrumbs data={data.specialist} pageType={ 'specialist' }/>
             <PrevNext data={data.specialist} pageType={ 'specialist' } nextValue={ nextValue }/>
             <FlexLayout data={data.specialist.flexcontent} sidebar={data.sidebar} />

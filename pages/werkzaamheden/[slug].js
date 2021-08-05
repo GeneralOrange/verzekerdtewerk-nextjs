@@ -34,7 +34,7 @@ export default function Job({ data }){
         <>
             <Headings data={data.job} />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={data.job.header} />
+            <HeaderBanner data={data.job.header} asHeader={ true }/>
             <Breadcrumbs data={data.job} pageType={ 'job' }/>
             <PrevNext data={data.job} pageType={ 'job' } nextValue={ nextValue }/>
             <FlexLayout data={data.job.flexcontent} sidebar={data.sidebar} />

@@ -5,6 +5,7 @@ import AccordionComponent from './AccordionComponent'
 import CardSlider from './CardSlider'
 import ContactForm from './ContactForm'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
+import HeaderBanner from '../HeaderBanner'
 
 export default function FlexContentController({ data }){
     if(!data){
@@ -101,6 +102,10 @@ function FlexContentDistrubutor({ component }){
                 <AccordionComponent data={ component }/>
             )
             break;
+        case 'custom.header':
+            return (
+                <HeaderBanner data={ component } asHeader={ false } />
+            )
         default: 
             return null;
             break;

@@ -24,7 +24,7 @@ export default function JobCollection({ data }) {
         <>
             <Headings data={ data.jobsOverview } />
             <Menu data={ data.menu }/>
-            <HeaderBanner data={ data.jobsOverview.header }/>
+            <HeaderBanner data={ data.jobsOverview.header } asHeader={ true }/>
             <Breadcrumbs data={ evalBreadcrumbs(breadcrumbData) } pageType={ 'page' } />
             <CardLayout data={ data } sidebar={ data.sidebar } uri={ '/werkzaamheden' }/>
             <Footer data={data.footer}/>
