@@ -3,6 +3,8 @@ import Content from './Content'
 import Usp from './Usp'
 import AccordionComponent from './AccordionComponent'
 import CardSlider from './CardSlider'
+import PlaceOrderForm from './PlaceOrderForm'
+import SignupSpecialistForm from './SignupSpecialistForm'
 import ContactForm from './ContactForm'
 import styles from '../../styles/flexcontent/FlexContent.module.scss'
 import HeaderBanner from '../HeaderBanner'
@@ -93,9 +95,28 @@ function FlexContentDistrubutor({ component }){
             )
             break;
         case 'custom.form':
-            return (
-                <ContactForm data={ component }/>
-            )
+            switch(component.type){
+                case 'Place_order':
+                    return (
+                        <PlaceOrderForm data={ component }/>
+                    )
+                    break;
+                case 'Signup_specialist':
+                    return (
+                        <SignupSpecialistForm data={ component }/>
+                    )
+                    break;
+                case 'Contact':
+                    return (
+                        <ContactForm data={ component }/>
+                    )
+                    break;
+                default:
+                    return (
+                        <ContactForm data={ component }/>
+                    )
+                    break;
+            }
             break;
         case 'custom.accordion':
             return (
