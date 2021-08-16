@@ -337,7 +337,9 @@ export default function PlaceOrderForm({ data }) {
         'Zonnepanelen installeren of vervangen',
         'Zonwering of zonnescherm plaatsen of vervangen',
         'Zwembad plaatsen of renoveren',
-];
+    ];
+
+    tasks.sort();
 
     const task_options = tasks.map((task, index) => (
         <option key={index} value={task}>{task}</option>

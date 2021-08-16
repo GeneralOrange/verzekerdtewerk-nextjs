@@ -17,16 +17,13 @@ export default function Footer({ data }){
     return (
       <>
         <CookieConsent
-          enableDeclineButton
           containerClasses={ cookieStyles.CookieConsent }
           buttonClasses={ cookieStyles.CookieConsent__buttonAccept }
-          declineButtonClasses={ cookieStyles.CookieConsent__buttonDecline }
           contentClasses={ cookieStyles.CookieConsent__content }
           buttonWrapperClasses={ cookieStyles.CookieConsent__buttonWrapper }
           disableStyles={ true }
           location='none'
           buttonText='Accepteren en doorgaan'
-          declineButtonText='Nee, bedankt'
         >
           <div className={ cookieStyles.CookieConsent__title }>
             <strong>Beste bezoeker!</strong>
