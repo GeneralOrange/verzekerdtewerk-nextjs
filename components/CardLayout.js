@@ -45,6 +45,26 @@ export default function CardLayout({ data, sidebar, uri }){
         ]
     }
 
+    if(!data.intro){
+        data.intro = data.specialistsOverview ? data.specialistsOverview.intro : undefined;
+    }
+
+    if(!data.intro){
+        data.intro = data.jobsOverview ? data.jobsOverview.intro : undefined;
+    }
+
+    if(!data.intro){
+        data.intro = data.costsOverview ? data.costsOverview.intro : undefined;
+    }
+    
+    if(!data.intro){
+        data.intro = data.categoriesOverview ? data.categoriesOverview.intro : undefined;
+    }
+
+    if(!data.intro){
+        data.intro = data.actionsOverview ? data.actionsOverview.intro : undefined;
+    }
+
     if(!sidebar || !sidebar.sidebarBoolean){
         return (
             <>

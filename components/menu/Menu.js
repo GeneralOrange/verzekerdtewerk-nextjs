@@ -51,7 +51,7 @@ export default function Menu({ data }){
 
     return (
       <Navbar className={MenuClass} sticky="top" expand="lg">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="/">
             <Image
               src={logoSrc}
@@ -62,7 +62,7 @@ export default function Menu({ data }){
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className={styles.Menu__collapse}>
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <MenuComponents components={ data.menu_components } />
             </Nav>
           </Navbar.Collapse>
