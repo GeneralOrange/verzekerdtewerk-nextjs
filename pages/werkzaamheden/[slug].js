@@ -1,6 +1,7 @@
 import { fetchAPI } from '../../lib/api'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { routerException } from '../../lib/_helpers'
 import Headings from '../../processing/metaData/Headings'
 import HeaderBanner from '../../components/HeaderBanner'
 import Menu from '../../components/menu/Menu'
@@ -9,13 +10,13 @@ import PrevNext from '../../components/PrevNext'
 import FlexLayout from '../../components/FlexLayout'
 import Footer from '../../components/footer/Footer'
 
-
 export default function Job({ data }){
     if(!data){
         return null;
     }
 
     let nextValue = false;
+    let enableRouter = routerException(data.job.slug);
 
     if(data.cost){
         nextValue = true;
@@ -24,7 +25,7 @@ export default function Job({ data }){
     const router = useRouter();
 
     useEffect(()=> {
-        if(nextValue === true){
+        if(nextValue === true && enableRouter === true){
             
             router.push(`${process.env.NEXT_PUBLIC_SITE_URL}/werkzaamheden/${data.job.slug}/kosten/`);
         }

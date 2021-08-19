@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { FaChevronLeft } from 'react-icons/fa'
 import { FaChevronRight } from 'react-icons/fa'
+import { routerException } from '../lib/_helpers'
 import { Container, Row, Col } from 'react-bootstrap'
 import styles from '../styles/PrevNext.module.scss'
 
